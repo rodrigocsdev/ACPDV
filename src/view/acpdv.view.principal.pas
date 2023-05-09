@@ -420,6 +420,7 @@ end;
 
 procedure Tpageprincipal.InformacoesOperador;
 begin
+ FCaixa.Items['nomecaixa'];
 //  lOperador := 'Caixa ' + FCaixa.caixa.ToString + ' | Operador: ' +
 //    FCaixa.Operador + ' | Turno: ' + FCaixa.Turno.ToString;
 //

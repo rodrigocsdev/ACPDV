@@ -71,7 +71,7 @@ begin
 
  FLista.Add('idcaixa', lDataSetCaixa.FieldByName('id').AsString);
  FLista.Add('nomecaixa', lDataSetCaixa.FieldByName('nome').AsString);
- FLista.Add('idturno', lDataSetTurno.FieldByName('id_turno').AsString);
+ FLista.Add('idturno', lDataSetTurno.FieldByName('id').AsString);
  FLista.Add('nometurno', lDataSetCaixa.FieldByName('nome').AsString);
 
  Result := FLista;

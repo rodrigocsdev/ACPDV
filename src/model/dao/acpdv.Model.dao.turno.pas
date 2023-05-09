@@ -105,7 +105,7 @@ function TDAOTurno.Atualizar : iDAO<TTurno>;
 begin
     Result := Self;
     FConexao
-     .SQL('UPDATE TURNO SET NOME=? WHERE ID_TURNO= ?')
+     .SQL('UPDATE TURNO SET NOME=? WHERE ID= ?')
      .Params(0,FTurno.GetIdTurno).Params(1,FTurno.GetNome)
      .ExecSQL;
 end;
