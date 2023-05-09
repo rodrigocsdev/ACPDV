@@ -89,7 +89,7 @@ begin
     Result := Self;
       FConexao
       .SQL('Delete from Turno where id=:id')
-//      .Params('id',FTurno.GetId)
+      .Params('id',FTurno.GetIdTurno)
       .ExecSQL;
 end;
 
@@ -104,20 +104,20 @@ end;
 function TDAOTurno.Atualizar : iDAO<TTurno>;
 begin
     Result := Self;
-//    FConexao
-//     .SQL()
-//     .Params()
-//     .ExecSQL;
+    FConexao
+     .SQL('UPDATE TURNO SET NOME=? WHERE ID_TURNO= ?')
+     .Params(0,FTurno.GetIdTurno).Params(1,FTurno.GetNome)
+     .ExecSQL;
 end;
 
 function TDAOTurno.Inserir : iDAO<TTurno>;
 begin
     Result := Self;
-//      FDataSet :=
-//    FConexao.SQL()
-//      .ExecSQL
-//      .SQL()
-//      .Open.DataSet;
+      FDataSet :=
+    FConexao.SQL('INSERT INTO TURNO (NOME) VALUES(:NOME)')
+    .Params(':NOME', FTurno.GetNome)
+      .ExecSQL
+      .Open.DataSet;
 end;
 
 function TDAOTurno.DataSet: TDataSet;
