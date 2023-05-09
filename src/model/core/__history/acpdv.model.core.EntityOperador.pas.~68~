@@ -1,0 +1,137 @@
+unit acpdv.model.core.entityoperador;
+
+interface
+
+uses
+ System.SysUtils,
+ System.Generics.Collections,
+ System.Classes,
+ System.TypInfo,
+ System.DateUtils,
+ Data.DB,
+ acpdv.model.dao.Operador,
+ acpdv.model.dao.CAIXA,
+ acpdv.model.dao.turno,
+ Datasnap.DBClient,
+ acpdv.model.dao.CAIXA_MOVIMENTO,
+ acpdv.model.Entidade.caixamovimento;
+
+type
+ TTipoTurno = (MANHA, TARDE, NOITE);
+
+ TTipoTurnoHelper = record helper for TTipoTurno
+  function ToString: String;
+  function ToEnum(Value: String): TTipoTurno;
+  function ToTurno(Value: TDateTime): TTipoTurno;
+ end;
+
+ TEntityOperador = class(TDataModule)
+  procedure DataModuleCreate(Sender: TObject);
+  procedure DataModuleDestroy(Sender: TObject);
+ private
+  FLista: TDictionary<String, String>;
+  FOperador: String;
+    FDataSet: TDataSet;
+
+    FCaixaMovemento: TCaixaMovimento;
+
+    procedure PreecheLista(Value: TDictionary<String, Variant>);
+ public
+  class function New: TEntityOperador;
+  function ValidarOperador(aUsuario, aSenha: String): Boolean;
+  function NumeroCaixaTurno(Value: String): TDictionary<String, String>;
+ end;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+{$R *.dfm}
+{ TEntityOperador }
+
+procedure TEntityOperador.DataModuleCreate(Sender: TObject);
+begin
+ FLista := TDictionary<String, String>.Create;
+end;
+
+procedure TEntityOperador.DataModuleDestroy(Sender: TObject);
+begin
+ FLista.Free;
+end;
+
+class function TEntityOperador.New: TEntityOperador;
+begin
+ Result := Self.Create(nil);
+end;
+
+function TEntityOperador.NumeroCaixaTurno(Value: String)
+  : TDictionary<String, String>;
+var
+ lDataSetCaixa, lDataSetTurno: TDataset;
+ lDAOCaixa: TDAOCaixa;
+ lDAOTurno: TDAOTurno;
+ lTipo: TTipoTurno;
+begin
+ lDAOCaixa := TDAOCaixa.Create;
+ lDAOTurno := TDAOTurno.Create;
+
+ lDataSetCaixa := lDAOCaixa.FindWhere('nome', UpperCase(Value)).DataSet;
+ lDataSetTurno := lDAOTurno.FindWhere('nome',
+   lTipo.ToTurno(Now).ToString).DataSet;
+
+ FLista.Add('idcaixa', lDataSetCaixa.FieldByName('id').AsString);
+ FLista.Add('nomecaixa', lDataSetCaixa.FieldByName('nome').AsString);
+ FLista.Add('idturno', lDataSetTurno.FieldByName('id').AsString);
+ FLista.Add('nometurno', lDataSetCaixa.FieldByName('nome').AsString);
+
+ Result := FLista;
+end;
+
+function TEntityOperador.ValidarOperador(aUsuario, aSenha: String): Boolean;
+var
+ lDataSet: TDataset;
+ lOperador: TDAOOperador;
+ lFieldNome, lFieldsenha: TField;
+begin
+ Result := False;
+
+ lOperador := TDAOOperador.Create;
+ lDataSet := lOperador.Listar.DataSet;
+
+ lFieldNome := lDataSet.FindField('NOME');
+ lFieldsenha := lDataSet.FindField('SENHA');
+
+ if lFieldNome.AsString.Equals(UpperCase(aUsuario)) and
+   lFieldsenha.AsString.Equals(aSenha) then
+ begin
+  FLista.Add('idoperador', lDataSet.FieldByName('id').AsString);
+  FLista.Add('nomeoperador', lFieldNome.AsString);
+  FLista.Add('senhaoperador', lFieldsenha.AsString);
+  Result := True;
+ end;
+end;
+
+{ TTipoTurnoHelper }
+
+function TTipoTurnoHelper.ToEnum(Value: String): TTipoTurno;
+begin
+ Result := TTipoTurno(GetEnumValue(TypeInfo(TTipoTurno), UpperCase(Value)));
+end;
+
+function TTipoTurnoHelper.ToString: String;
+begin
+ Result := GetEnumName(TypeInfo(TTipoTurno), Integer(Self));
+end;
+
+function TTipoTurnoHelper.ToTurno(Value: TDateTime): TTipoTurno;
+begin
+ if ((HourOf(Value) >= 6) and (HourOf(Value) <= 11)) then
+  Result := MANHA;
+
+ if ((HourOf(Value) >= 12) and (HourOf(Value) <= 17)) then
+  Result := TARDE;
+
+ if ((HourOf(Value) >= 18) and (HourOf(Value) <= 23)) then
+  Result := NOITE;
+end;
+
+end.

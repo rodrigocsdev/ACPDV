@@ -1,0 +1,177 @@
+unit acpdv.view.componente.mensagens;
+
+interface
+
+uses
+ Winapi.Windows,
+ Winapi.Messages,
+ System.SysUtils,
+ System.Variants,
+ System.Classes,
+ Vcl.Graphics,
+ Vcl.Controls,
+ Vcl.Forms,
+ Vcl.Dialogs,
+ Vcl.ExtCtrls,
+ Vcl.Buttons,
+ Vcl.StdCtrls,
+ acpdv.utils.Forms.impl.resourcesimages,
+ acpdv.utils;
+
+type
+ TTipoMensagem = (INFORMACAO, ERRO, ALERTA);
+
+ TPageMensagens = class(TForm)
+  pnlContainer: TPanel;
+  pnlTitulo: TPanel;
+  Image: TImage;
+  pnlBottom: TPanel;
+  pnlCancelar: TPanel;
+  ShapeCancelar: TShape;
+  btnCancelar: TSpeedButton;
+  pnlConfirmar: TPanel;
+  ShapeConfirmar: TShape;
+  btnConfirmar: TSpeedButton;
+  pnlOk: TPanel;
+  ShapeOk: TShape;
+  btnOk: TSpeedButton;
+  pnlMensagem: TPanel;
+  lblMensagens: TLabel;
+  procedure FormCreate(Sender: TObject);
+  procedure btnCancelarClick(Sender: TObject);
+  procedure btnOkClick(Sender: TObject);
+  procedure btnConfirmarClick(Sender: TObject);
+ private
+  FProc: TProc<TObject>;
+  procedure Responsive;
+  procedure ModelarMensagem(const aMensagem: String; aTipo: TTipoMensagem);
+  procedure TipoMensagem(aTipo: TTipoMensagem);
+ public
+  class function New(AOwner: TComponent): TPageMensagens;
+  function Mensagem(const aMensagem: String; aTipo: TTipoMensagem)
+    : TPageMensagens;
+  function Embed(aParent: TPanel): TPageMensagens;
+  function ClickOk(Proc: TProc<TObject>): TPageMensagens;
+  function ClickConfirmar(Proc: TProc<TObject>): TPageMensagens;
+  function ClickCancelar(Proc: TProc<TObject>): TPageMensagens;
+ end;
+
+implementation
+
+{$R *.dfm}
+{ TForm1 }
+
+procedure TPageMensagens.btnCancelarClick(Sender: TObject);
+begin
+ if Assigned(FProc) then
+  FProc(Sender);
+ Self.RemoveObject;
+end;
+
+procedure TPageMensagens.btnConfirmarClick(Sender: TObject);
+begin
+ if Assigned(FProc) then
+  FProc(Sender);
+ Self.RemoveObject;
+end;
+
+procedure TPageMensagens.btnOkClick(Sender: TObject);
+begin
+ if Assigned(FProc) then
+  FProc(Sender);
+ Self.RemoveObject;
+end;
+
+function TPageMensagens.ClickCancelar(Proc: TProc<TObject>): TPageMensagens;
+begin
+ Result := Self;
+ FProc := Proc;
+end;
+
+function TPageMensagens.ClickConfirmar(Proc: TProc<TObject>): TPageMensagens;
+begin
+ Result := Self;
+ FProc := Proc;
+end;
+
+function TPageMensagens.ClickOk(Proc: TProc<TObject>): TPageMensagens;
+begin
+ Result := Self;
+ FProc := Proc;
+end;
+
+function TPageMensagens.Embed(aParent: TPanel): TPageMensagens;
+begin
+ Result := Self;
+ Self.AddObject(aParent);
+end;
+
+procedure TPageMensagens.FormCreate(Sender: TObject);
+begin
+ Responsive;
+end;
+
+function TPageMensagens.Mensagem(const aMensagem: String; aTipo: TTipoMensagem)
+  : TPageMensagens;
+begin
+ Result := Self;
+ Self.ModelarMensagem(aMensagem, aTipo);
+end;
+
+procedure TPageMensagens.ModelarMensagem(const aMensagem: String;
+  aTipo: TTipoMensagem);
+begin
+ Self.lblMensagens.Caption := aMensagem;
+ TipoMensagem(aTipo);
+end;
+
+class function TPageMensagens.New(AOwner: TComponent): TPageMensagens;
+begin
+ Result := Self.Create(AOwner);
+end;
+
+procedure TPageMensagens.Responsive;
+var
+ lHeigth, lWidth: Integer;
+begin
+ lHeigth := Round((Self.Height - pnlContainer.Height) / 2);
+ lWidth := Round((Self.Width - pnlContainer.Width) / 2);
+
+ pnlContainer.Margins.Left := lWidth;
+ pnlContainer.Margins.Right := lWidth;
+ pnlContainer.Margins.Top := lHeigth;
+ pnlContainer.Margins.Bottom := lHeigth;
+ pnlContainer.Align := alClient;
+end;
+
+procedure TPageMensagens.TipoMensagem(aTipo: TTipoMensagem);
+begin
+ case aTipo of
+  INFORMACAO:
+   begin
+    Self.pnlTitulo.Caption := 'Informação';
+    Self.pnlCancelar.Visible := True;
+    Self.btnCancelar.Caption := 'Cancelar';
+    Self.pnlConfirmar.Visible := True;
+    Self.btnConfirmar.Caption := 'Confirmar';
+    TResourceImage.New.ResourceImage(Image, 'Informacao');
+   end;
+  ERRO:
+   begin
+    Self.pnlTitulo.Caption := 'Erro';
+    Self.pnlOk.Visible := True;
+    Self.btnOk.Caption := 'Ok';
+    TResourceImage.New.ResourceImage(Image, 'Erro');
+   end;
+  ALERTA:
+   begin
+    Self.pnlTitulo.Caption := 'Alerta';
+    Self.pnlOk.Visible := True;
+    Self.btnOk.Caption := 'Ok';
+    TResourceImage.New.ResourceImage(Image, 'Alerta');
+   end;
+
+ end;
+end;
+
+end.

@@ -1,0 +1,64 @@
+unit acpdv.model.dados;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, Data.DB, Datasnap.DBClient,
+  FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Error, FireDAC.UI.Intf,
+  FireDAC.Phys.Intf, FireDAC.Stan.Def, FireDAC.Stan.Pool, FireDAC.Stan.Async,
+  FireDAC.Phys, FireDAC.Phys.SQLite, FireDAC.Phys.SQLiteDef,
+  FireDAC.Stan.ExprFuncs, FireDAC.Phys.SQLiteWrapper.Stat, FireDAC.VCLUI.Wait,
+  FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf, FireDAC.DApt,
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client;
+
+type
+  TConexao = class(TDataModule)
+    FDConnection: TFDConnection;
+    FDQuery: TFDQuery;
+    procedure DataModuleCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Conexao: TConexao;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+{$R *.dfm}
+
+procedure TConexao.DataModuleCreate(Sender: TObject);
+begin
+  cdsItens.Append;
+  cdsItensid.AsInteger := 1;
+  cdsItenscodigo.AsString := '0006';
+  cdsItensdescricao.AsString := 'COXA E SOBRE COXA SADIA BIO BD 1KG';
+  cdsItensvalorunitario.AsCurrency := 16.50;
+  cdsItensunidade.AsString := 'KG';
+  cdsItensestoque.AsFloat := 5;
+  cdsItens.Post;
+  cdsItens.Append;
+  cdsItensid.AsInteger := 2;
+  cdsItenscodigo.AsString := '0008';
+  cdsItensdescricao.AsString :=
+    'HOT POCKET SADIA X BURGUER MAIONESE GRILL 145G';
+  cdsItensvalorunitario.AsCurrency := 5.60;
+  cdsItensunidade.AsString := 'KG';
+  cdsItensestoque.AsFloat := 5;
+  cdsItens.Post;
+  cdsItens.Append;
+  cdsItensid.AsInteger := 3;
+  cdsItenscodigo.AsString := '0003';
+  cdsItensdescricao.AsString := 'STEAK DE FRANGO SADIA 100G';
+  cdsItensvalorunitario.AsCurrency := 2.50;
+  cdsItensunidade.AsString := 'KG';
+  cdsItensestoque.AsFloat := 5;
+  cdsItens.Post;
+
+  cdsItens.Open;
+end;
+
+end.

@@ -1,0 +1,24 @@
+[Data/Hora........] 09/05/2023 09:52:30
+[Mensagem.........] FDQuery: Field 'id' not found
+[Classe Exceção...] EDatabaseError
+[Formulário.......] PageLogin
+[Unit.............] Vcl.ExtCtrls
+[Component Visual.] edtSenha
+----------------------------------------------------------------------
+
+[Data/Hora........] 09/05/2023 09:53:30
+[Mensagem.........] FDQuery: Field 'id' not found
+[Classe Exceção...] EDatabaseError
+[Formulário.......] PageLogin
+[Unit.............] Vcl.ExtCtrls
+[Component Visual.] edtSenha
+----------------------------------------------------------------------
+
+[Data/Hora........] 09/05/2023 10:08:00
+[Mensagem.........] FDQuery: Field 'id' not found
+[Classe Exceção...] EDatabaseError
+[Formulário.......] PageLogin
+[Unit.............] Vcl.ExtCtrls
+[Component Visual.] edtSenha
+----------------------------------------------------------------------
+
