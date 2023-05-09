@@ -86,3 +86,27 @@
 [Component Visual.] edtSenha
 ----------------------------------------------------------------------
 
+[Data/Hora........] 09/05/2023 16:42:55
+[Mensagem.........] FDQuery: Field 'id' not found
+[Classe Exceção...] EDatabaseError
+[Formulário.......] PageLogin
+[Unit.............] Vcl.ExtCtrls
+[Component Visual.] edtSenha
+----------------------------------------------------------------------
+
+[Data/Hora........] 09/05/2023 16:49:03
+[Mensagem.........] FDQuery: Field 'idturno' not found
+[Classe Exceção...] EDatabaseError
+[Formulário.......] PageLogin
+[Unit.............] Vcl.ExtCtrls
+[Component Visual.] edtSenha
+----------------------------------------------------------------------
+
+[Data/Hora........] 09/05/2023 16:51:26
+[Mensagem.........] '' is not a valid integer value
+[Classe Exceção...] EConvertError
+[Formulário.......] PageAbrirCaixa
+[Unit.............] Vcl.ExtCtrls
+[Component Visual.] edtQuantidade
+----------------------------------------------------------------------
+

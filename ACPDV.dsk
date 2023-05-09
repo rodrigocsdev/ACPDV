@@ -1,45 +1,45 @@
 ﻿[Closed Files]
-File_0=TSourceModule,'c:\program files (x86)\embarcadero\studio\21.0\SOURCE\VCL\Vcl.Forms.pas',0,1,11175,1,11195,0,0,{{1891,4},{1907,15},{'TScrollWindow'}}{{1999,4},{2102,15},{'TMainMenuBarStyleHook'}},
+File_0=TSourceModule,'c:\program files (x86)\embarcadero\studio\21.0\SOURCE\VCL\Vcl.Forms.pas',0,1,11180,1,11195,0,0,{{1891,4},{1907,15},{'TScrollWindow'}}{{1999,4},{2102,15},{'TMainMenuBarStyleHook'}},
 
 [Modules]
-Module0=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\controller\acpdv.controller.pas
+Module0=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\conexao\acpdv.model.conexao.pas
 Module1=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\view\acpdv.view.page.login.pas
-Module2=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\view\acpdv.view.principal.pas
-Module3=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\conexao\acpdv.model.conexao.pas
+Module2=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.Model.dao.turno.pas
+Module3=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\view\acpdv.view.principal.pas
 Module4=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\core\acpdv.model.core.EntityOperador.pas
-Module5=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.model.dao.adquirente.pas
-Module6=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.Model.dao.turno.pas
-Module7=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.Model.dao.Operador.pas
+Module5=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.Model.dao.Operador.pas
+Module6=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\ACPDV.dproj
+Module7=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.model.dao.adquirente.pas
 Count=8
 EditWindowCount=1
 
-[C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\controller\acpdv.controller.pas]
+[C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\conexao\acpdv.model.conexao.pas]
 ModuleType=TSourceModule
 
 [C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\view\acpdv.view.page.login.pas]
 ModuleType=TSourceModule
 
-[C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\view\acpdv.view.principal.pas]
+[C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.Model.dao.turno.pas]
 ModuleType=TSourceModule
 
-[C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\conexao\acpdv.model.conexao.pas]
+[C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\view\acpdv.view.principal.pas]
 ModuleType=TSourceModule
 
 [C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\core\acpdv.model.core.EntityOperador.pas]
 ModuleType=TSourceModule
 
-[C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.model.dao.adquirente.pas]
-ModuleType=TSourceModule
-
-[C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.Model.dao.turno.pas]
-ModuleType=TSourceModule
-
 [C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.Model.dao.Operador.pas]
+ModuleType=TSourceModule
+
+[C:\Users\Rodrigo.Carvalho\GitHub\acpdv\ACPDV.dproj]
+ModuleType=TBaseProject
+
+[C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.model.dao.adquirente.pas]
 ModuleType=TSourceModule
 
 [EditWindow0]
 ViewCount=8
-CurrentEditView=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\controller\acpdv.controller.pas
+CurrentEditView=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\conexao\acpdv.model.conexao.pas
 View0=0
 View1=1
 View2=2
@@ -79,7 +79,7 @@ BottomMiddelPanelData=0000080001020200000009000000446F636B5369746530100000004772
 CustomEditViewType=TEditView
 Module=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\view\acpdv.view.principal.pas
 CursorX=1
-CursorY=419
+CursorY=418
 TopLine=400
 LeftCol=1
 Elisions=
@@ -90,8 +90,8 @@ EditViewName=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\view\acpdv.view.principa
 CustomEditViewType=TEditView
 Module=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.Model.dao.Operador.pas
 CursorX=1
-CursorY=110
-TopLine=103
+CursorY=64
+TopLine=37
 LeftCol=1
 Elisions=
 Bookmarks=
@@ -100,9 +100,9 @@ EditViewName=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.Model.da
 [View2]
 CustomEditViewType=TEditView
 Module=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\conexao\acpdv.model.conexao.pas
-CursorX=10
-CursorY=62
-TopLine=41
+CursorX=1
+CursorY=111
+TopLine=91
 LeftCol=1
 Elisions=
 Bookmarks=
@@ -111,9 +111,9 @@ EditViewName=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\conexao\acpdv.mode
 [View3]
 CustomEditViewType=TEditView
 Module=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\view\acpdv.view.page.login.pas
-CursorX=25
-CursorY=47
-TopLine=43
+CursorX=1
+CursorY=66
+TopLine=46
 LeftCol=1
 Elisions=
 Bookmarks=
@@ -121,31 +121,31 @@ EditViewName=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\view\acpdv.view.page.log
 
 [View4]
 CustomEditViewType=TEditView
-Module=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\controller\acpdv.controller.pas
-CursorX=1
-CursorY=9
-TopLine=1
-LeftCol=1
-Elisions=
-Bookmarks=
-EditViewName=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\controller\acpdv.controller.pas
-
-[View5]
-CustomEditViewType=TEditView
 Module=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\core\acpdv.model.core.EntityOperador.pas
 CursorX=1
-CursorY=58
-TopLine=43
+CursorY=78
+TopLine=49
 LeftCol=1
 Elisions=
 Bookmarks=
 EditViewName=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\core\acpdv.model.core.EntityOperador.pas
 
+[View5]
+CustomEditViewType=TEditView
+Module=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\ACPDV.dpr
+CursorX=1
+CursorY=109
+TopLine=84
+LeftCol=1
+Elisions=
+Bookmarks=
+EditViewName=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\ACPDV.dpr
+
 [View6]
 CustomEditViewType=TEditView
 Module=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.Model.dao.turno.pas
-CursorX=16
-CursorY=92
+CursorX=1
+CursorY=102
 TopLine=82
 LeftCol=1
 Elisions=
@@ -188,15 +188,12 @@ Dockable=1
 StayOnTop=0
 
 [Breakpoints]
-Count=8
-Breakpoint0='C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\view\acpdv.view.principal.pas',410,'',0,1,'',1,0,0,'',1,'','','',0,''
-Breakpoint1='C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\conexao\acpdv.model.conexao.pas',111,'',0,1,'',1,0,0,'',1,'','','',0,''
-Breakpoint2='C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\conexao\acpdv.model.conexao.pas',90,'',0,1,'',1,0,0,'',1,'','','',0,''
-Breakpoint3='C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\conexao\acpdv.model.conexao.pas',62,'',0,1,'',1,0,0,'',1,'','','',0,''
-Breakpoint4='C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\core\acpdv.model.core.EntityOperador.pas',64,'',0,1,'',1,0,0,'',1,'','','',0,''
-Breakpoint5='C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.model.dao.adquirente.pas',115,'',0,1,'',1,0,0,'',1,'','','',0,''
-Breakpoint6='C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.model.dao.adquirente.pas',135,'',0,1,'',1,0,0,'',1,'','','',0,''
-Breakpoint7='C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\view\acpdv.view.page.login.pas',66,'',0,1,'',1,0,0,'',1,'','','',0,''
+Count=5
+Breakpoint0='C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\conexao\acpdv.model.conexao.pas',111,'',0,1,'',1,0,0,'',1,'','','',0,''
+Breakpoint1='C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.model.dao.adquirente.pas',115,'',0,1,'',1,0,0,'',1,'','','',0,''
+Breakpoint2='C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.model.dao.adquirente.pas',135,'',0,1,'',1,0,0,'',1,'','','',0,''
+Breakpoint3='C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\view\acpdv.view.page.login.pas',66,'',0,1,'',1,0,0,'',1,'','','',0,''
+Breakpoint4='C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\core\acpdv.model.core.EntityOperador.pas',57,'',0,1,'',1,0,0,'',1,'','','',0,''
 
 [EmbarcaderoWin32Debugger_AddressBreakpoints]
 Count=0
@@ -232,12 +229,12 @@ Docked=1
 State=0
 Left=0
 Top=0
-Width=1536
-Height=6731
+Width=2000
+Height=6962
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=1536
-ClientHeight=6731
+ClientWidth=2000
+ClientHeight=6962
 TBDockHeight=5904
 LRDockWidth=2349
 Dockable=1
@@ -289,12 +286,12 @@ Docked=1
 State=0
 Left=0
 Top=0
-Width=2000
-Height=6692
+Width=1536
+Height=6731
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=2000
-ClientHeight=6692
+ClientWidth=1536
+ClientHeight=6731
 TBDockHeight=9010
 LRDockWidth=1536
 Dockable=1
@@ -737,6 +734,6 @@ LRDockWidth=1536
 Dockable=1
 StayOnTop=0
 TabPosition=1
-ActiveTabID=ProjectManager
+ActiveTabID=PropertyInspector
 TabDockClients=ProjectManager,ToolForm,PropertyInspector,StructureView,TemplateView,ClassBrowserTool,DataExplorerContainer,frmDesignPreview,ModelViewTool
 
