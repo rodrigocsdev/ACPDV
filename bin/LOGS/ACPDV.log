@@ -118,3 +118,27 @@
 [Component Visual.] edtSenha
 ----------------------------------------------------------------------
 
+[Data/Hora........] 10/05/2023 10:57:21
+[Mensagem.........] Access violation at address 008C1FFE in module 'ACPDV.exe'. Read of address 00000008
+[Classe Exceção...] EAccessViolation
+[Formulário.......] pageprincipal
+[Unit.............] Vcl.ExtCtrls
+[Component Visual.] pnlTitle
+----------------------------------------------------------------------
+
+[Data/Hora........] 10/05/2023 11:03:17
+[Mensagem.........] Access violation at address 008C1FFE in module 'ACPDV.exe'. Read of address 00000008
+[Classe Exceção...] EAccessViolation
+[Formulário.......] pageprincipal
+[Unit.............] Vcl.ExtCtrls
+[Component Visual.] pnlTitle
+----------------------------------------------------------------------
+
+[Data/Hora........] 10/05/2023 11:06:20
+[Mensagem.........] Access violation at address 008C1FFE in module 'ACPDV.exe'. Read of address 00000008
+[Classe Exceção...] EAccessViolation
+[Formulário.......] pageprincipal
+[Unit.............] Vcl.ExtCtrls
+[Component Visual.] pnlTitle
+----------------------------------------------------------------------
+

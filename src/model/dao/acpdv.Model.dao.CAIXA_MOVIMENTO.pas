@@ -19,15 +19,17 @@ type
   public
     constructor Create;
     destructor Destroy; override;
-    class function New: iDAO<TCaixaMovimento>;
+    class function New: TDAOCaixaMovimento;
     function Listar: iDAO<TCaixaMovimento>;
     function ListarPorId(Id: Variant): iDAO<TCaixaMovimento>;
     function Excluir(aId: Variant): iDAO<TCaixaMovimento>; overload;
     function Excluir: iDAO<TCaixaMovimento>; overload;
     function Atualizar: iDAO<TCaixaMovimento>;
-    function Inserir: iDAO<TCaixaMovimento>;
+    function Inserir: iDAO<TCaixaMovimento>; overload;
+    function Inserir(Value: TCaixaMovimento):TDAOCaixaMovimento; overload;
     function DataSource(var DataSource: TDataSource): iDAO<TCaixaMovimento>;
     function DataSet: TDataSet;
+    function FindWhere(aField: String; Value: Variant): iDAO<TCaixaMovimento>;
     function This: TCaixaMovimento;
     function These: TObjectList<TCaixaMovimento>;
 
@@ -50,7 +52,7 @@ begin
   inherited;
 end;
 
-class function TDAOCaixaMovimento.New: iDAO<TCaixaMovimento>;
+class function TDAOCaixaMovimento.New: TDAOCaixaMovimento;
 begin
   Result := Self.Create;
 end;
@@ -86,6 +88,55 @@ begin
   Result := Self;
   FConexao.SQL('Delete from CaixaMovimento where id=:id')
     .Params('id', FCaixaMovimento.GetId).ExecSQL;
+end;
+
+function TDAOCaixaMovimento.FindWhere(aField: String;
+  Value: Variant): iDAO<TCaixaMovimento>;
+begin
+  Result := Self;
+  FDataSet := FConexao.SQL('select * from caixa_movimento where '+aField+'=?')
+    .Params(0, Value).Open.DataSet;
+
+  if not FDataSet.RecordCount > 1 then
+  begin
+    FDataSet.First;
+    while not FDataSet.Eof do
+    begin
+      FCaixaMovimentos.Add(
+        TCaixaMovimento.New
+          .SetId(FDataSet.FieldByName('id').AsInteger)
+          .SetIdOperador(FDataSet.FieldByName('id_operador').AsInteger)
+          .SetIdCaixa(FDataSet.FieldByName('id_caixa').AsInteger)
+          .SetIdTurno(FDataSet.FieldByName('id_turno').AsInteger)
+          .SetDataFechamento(FDataSet.FieldByName('data_fechamento').AsDateTime)
+          .SetSituacao(FDataSet.FieldByName('situacao').AsString));
+      FDataSet.Next;
+    end;
+    Exit;
+  end;
+
+  if not FDataSet.IsEmpty then
+    FCaixaMovimento
+          .SetId(FDataSet.FieldByName('id').AsInteger)
+          .SetIdOperador(FDataSet.FieldByName('id_operador').AsInteger)
+          .SetIdCaixa(FDataSet.FieldByName('id_caixa').AsInteger)
+          .SetIdTurno(FDataSet.FieldByName('id_turno').AsInteger)
+          .SetDataFechamento(FDataSet.FieldByName('data_fechamento').AsDateTime)
+          .SetSituacao(FDataSet.FieldByName('situacao').AsString);
+end;
+
+function TDAOCaixaMovimento.Inserir(Value: TCaixaMovimento): TDAOCaixaMovimento;
+begin
+  Result := Self;
+  FDataSet := FConexao.SQL('INSERT INTO CAIXA_MOVIMENTO (ID_OPERADOR, ID_CAIXA, '+
+                           'ID_TURNO) VALUES(?, ?, ?)')
+  .Params(0, Value.GetIdOperador)
+  .Params(1, Value.GetIdCaixa)
+  .Params(2, Value.GetIdTurno)
+  .ExecSQL.SQL('select * from caixa_movimento where id=(select max(id) from caixa_movimento)')
+  .Open.DataSet;
+
+  FCaixaMovimento.SetId(FDataSet.FieldByName('ID').AsInteger);
 end;
 
 function TDAOCaixaMovimento.Atualizar: iDAO<TCaixaMovimento>;
