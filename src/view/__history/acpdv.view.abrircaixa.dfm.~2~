@@ -15,7 +15,6 @@ object PageAbrirCaixa: TPageAbrirCaixa
   Font.Style = []
   KeyPreview = True
   OldCreateOrder = False
-  OnCreate = FormCreate
   OnKeyDown = FormKeyDown
   OnResize = FormResize
   OnShow = FormShow
