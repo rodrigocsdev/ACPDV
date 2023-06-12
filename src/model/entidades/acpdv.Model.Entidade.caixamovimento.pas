@@ -2,6 +2,9 @@ unit acpdv.Model.Entidade.caixamovimento;
 
 interface
 
+uses
+  System.SysUtils;
+
 type
   TCaixaMovimento = class
   private
@@ -22,7 +25,7 @@ type
     function GetIdTurno :Integer;
     function SetIdTurno(const Value :Integer): TCaixaMovimento;
     function GetDataAbertura :TDateTime;
-    function SetDataAbertura(const Value :TDateTime): TCaixaMovimento;
+    //function SetDataAbertura(const Value :TDateTime): TCaixaMovimento;
     function GetDataFechamento :TDateTime;
     function SetDataFechamento(const Value :TDateTime): TCaixaMovimento;
     function GetSituacao :String;
@@ -40,6 +43,7 @@ end;
 
 function TCaixaMovimento.SetId(const Value :Integer): TCaixaMovimento;
 begin
+  Result := Self;
   FId := Value;
 end;
 
@@ -50,6 +54,7 @@ end;
 
 function TCaixaMovimento.SetIdOperador(const Value :Integer): TCaixaMovimento;
 begin
+  Result := Self;
   FIdOperador := Value;
 end;
 
@@ -60,6 +65,7 @@ end;
 
 function TCaixaMovimento.SetIdCaixa(const Value :Integer): TCaixaMovimento;
 begin
+  Result := Self;
   FIdCaixa := Value;
 end;
 
@@ -70,6 +76,7 @@ end;
 
 function TCaixaMovimento.SetIdTurno(const Value :Integer): TCaixaMovimento;
 begin
+  Result := Self;
   FIdTurno := Value;
 end;
 
@@ -78,18 +85,19 @@ begin
   Result := FIdTurno;
 end;
 
-function TCaixaMovimento.SetDataAbertura(const Value :TDateTime): TCaixaMovimento;
-begin
-  FDataAbertura := Value;
-end;
+//function TCaixaMovimento.SetDataAbertura(const Value :TDateTime): TCaixaMovimento;
+//begin
+//  FDataAbertura := Value;
+//end;
 
 function TCaixaMovimento.GetDataAbertura :TDateTime;
 begin
-  Result := FDataAbertura;
+  Result := Now;
 end;
 
 function TCaixaMovimento.SetDataFechamento(const Value :TDateTime): TCaixaMovimento;
 begin
+  Result := Self;
   FDataFechamento := Value;
 end;
 
@@ -100,7 +108,13 @@ end;
 
 function TCaixaMovimento.SetSituacao(const Value :String): TCaixaMovimento;
 begin
+  Result := Self;
+  if not Value.IsEmpty then
+  begin
   FSituacao := Value;
+  Exit;
+  end;
+  FSituacao := 'A';
 end;
 
 function TCaixaMovimento.GetSituacao :String;

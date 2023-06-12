@@ -167,7 +167,7 @@ end;
 
 function TDAOCaixaMovimento.DataSet: TDataSet;
 begin
-  result := FDataSet;
+  Result := FDataSet;
 end;
 
 function TDAOCaixaMovimento.DataSource(var DataSource: TDataSource)
