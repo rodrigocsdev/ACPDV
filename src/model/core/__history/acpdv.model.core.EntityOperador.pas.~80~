@@ -95,10 +95,10 @@ begin
   Result := TDictionary<String, Variant>.Create;
 
   lDataSetCaixa := TDAOCaixa.New.FindWhere('nome', UpperCase(aCaixa)).DataSet;
-  lDataSetTurno := TDAOTurno.New.FindWhere('nome', lTipo.ToTurno(Now)
-  .ToString).DataSet;
-  lDataSetOperador := TDAOOperador.New.FindWhere('nome', UpperCase(aOperador))
-  .DataSet;
+  lDataSetTurno := TDAOTurno.New.FindWhere('nome',
+    lTipo.ToTurno(Now).ToString).DataSet;
+  lDataSetOperador := TDAOOperador.New.FindWhere('nome',
+    UpperCase(aOperador)).DataSet;
 
   Result.Add('idoperador', lDataSetOperador.FieldByName('id').AsString);
   Result.Add('nomeoperador', lDataSetOperador.FieldByName('nome').AsString);
