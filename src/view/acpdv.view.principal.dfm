@@ -342,7 +342,7 @@ object pageprincipal: Tpageprincipal
               AlignWithMargins = True
               Left = 3
               Top = 5
-              Width = 119
+              Width = 397
               Height = 19
               Margins.Top = 0
               Margins.Right = 0
@@ -355,6 +355,7 @@ object pageprincipal: Tpageprincipal
               Font.Name = 'Tahoma'
               Font.Style = []
               ParentFont = False
+              ExplicitWidth = 119
             end
             object pnledtTotalCompra: TPanel
               Left = 0
@@ -384,8 +385,8 @@ object pageprincipal: Tpageprincipal
                 AlignWithMargins = True
                 Left = 6
                 Top = 6
-                Width = 102
-                Height = 30
+                Width = 388
+                Height = 34
                 Align = alClient
                 Alignment = taCenter
                 Caption = 'R$ 31,06'
@@ -395,6 +396,8 @@ object pageprincipal: Tpageprincipal
                 Font.Name = 'Tahoma'
                 Font.Style = []
                 ParentFont = False
+                ExplicitWidth = 102
+                ExplicitHeight = 30
               end
             end
           end
@@ -411,7 +414,7 @@ object pageprincipal: Tpageprincipal
               AlignWithMargins = True
               Left = 3
               Top = 5
-              Width = 68
+              Width = 397
               Height = 19
               Margins.Top = 0
               Margins.Right = 0
@@ -424,6 +427,7 @@ object pageprincipal: Tpageprincipal
               Font.Name = 'Tahoma'
               Font.Style = []
               ParentFont = False
+              ExplicitWidth = 68
             end
             object pnlEdtSubTotal: TPanel
               Left = 0
@@ -453,8 +457,8 @@ object pageprincipal: Tpageprincipal
                 AlignWithMargins = True
                 Left = 6
                 Top = 6
-                Width = 88
-                Height = 30
+                Width = 388
+                Height = 34
                 Align = alClient
                 Alignment = taCenter
                 Caption = 'R$ 6,46'
@@ -464,6 +468,8 @@ object pageprincipal: Tpageprincipal
                 Font.Name = 'Tahoma'
                 Font.Style = []
                 ParentFont = False
+                ExplicitWidth = 88
+                ExplicitHeight = 30
               end
             end
           end
@@ -480,7 +486,7 @@ object pageprincipal: Tpageprincipal
               AlignWithMargins = True
               Left = 3
               Top = 5
-              Width = 81
+              Width = 397
               Height = 19
               Margins.Top = 0
               Margins.Right = 0
@@ -493,6 +499,7 @@ object pageprincipal: Tpageprincipal
               Font.Name = 'Tahoma'
               Font.Style = []
               ParentFont = False
+              ExplicitWidth = 81
             end
             object pnlEdtQuantidade: TPanel
               Left = 0
@@ -554,7 +561,7 @@ object pageprincipal: Tpageprincipal
               AlignWithMargins = True
               Left = 3
               Top = 5
-              Width = 39
+              Width = 397
               Height = 19
               Margins.Top = 0
               Margins.Right = 0
@@ -567,6 +574,7 @@ object pageprincipal: Tpageprincipal
               Font.Name = 'Tahoma'
               Font.Style = []
               ParentFont = False
+              ExplicitWidth = 39
             end
             object pnlEdtPreco: TPanel
               Left = 0
@@ -596,8 +604,8 @@ object pageprincipal: Tpageprincipal
                 AlignWithMargins = True
                 Left = 6
                 Top = 6
-                Width = 80
-                Height = 30
+                Width = 388
+                Height = 34
                 Align = alClient
                 Alignment = taCenter
                 Caption = 'R$8,90'
@@ -607,6 +615,8 @@ object pageprincipal: Tpageprincipal
                 Font.Name = 'Tahoma'
                 Font.Style = []
                 ParentFont = False
+                ExplicitWidth = 80
+                ExplicitHeight = 30
               end
             end
           end
@@ -623,7 +633,7 @@ object pageprincipal: Tpageprincipal
               AlignWithMargins = True
               Left = 3
               Top = 5
-              Width = 56
+              Width = 397
               Height = 19
               Margins.Top = 0
               Margins.Right = 0
@@ -636,6 +646,7 @@ object pageprincipal: Tpageprincipal
               Font.Name = 'Tahoma'
               Font.Style = []
               ParentFont = False
+              ExplicitWidth = 56
             end
             object pnlEdtProduto: TPanel
               Left = 0
@@ -4762,7 +4773,7 @@ object pageprincipal: Tpageprincipal
               AlignWithMargins = True
               Left = 3
               Top = 5
-              Width = 202
+              Width = 437
               Height = 19
               Margins.Top = 0
               Margins.Right = 0
@@ -4775,6 +4786,7 @@ object pageprincipal: Tpageprincipal
               Font.Name = 'Tahoma'
               Font.Style = []
               ParentFont = False
+              ExplicitWidth = 202
             end
             object Panel16: TPanel
               Left = 0
@@ -4836,7 +4848,7 @@ object pageprincipal: Tpageprincipal
               AlignWithMargins = True
               Left = 3
               Top = 5
-              Width = 73
+              Width = 437
               Height = 19
               Margins.Top = 0
               Margins.Right = 0
@@ -4849,6 +4861,7 @@ object pageprincipal: Tpageprincipal
               Font.Name = 'Tahoma'
               Font.Style = []
               ParentFont = False
+              ExplicitWidth = 73
             end
             object Panel17: TPanel
               Left = 0
@@ -4910,7 +4923,7 @@ object pageprincipal: Tpageprincipal
               AlignWithMargins = True
               Left = 3
               Top = 5
-              Width = 67
+              Width = 437
               Height = 19
               Margins.Top = 0
               Margins.Right = 0
@@ -4923,6 +4936,7 @@ object pageprincipal: Tpageprincipal
               Font.Name = 'Tahoma'
               Font.Style = []
               ParentFont = False
+              ExplicitWidth = 67
             end
             object Panel19: TPanel
               Left = 0
@@ -4985,7 +4999,7 @@ object pageprincipal: Tpageprincipal
               AlignWithMargins = True
               Left = 3
               Top = 5
-              Width = 54
+              Width = 437
               Height = 19
               Margins.Top = 0
               Margins.Right = 0
@@ -4998,6 +5012,7 @@ object pageprincipal: Tpageprincipal
               Font.Name = 'Tahoma'
               Font.Style = []
               ParentFont = False
+              ExplicitWidth = 54
             end
             object Panel21: TPanel
               Left = 0

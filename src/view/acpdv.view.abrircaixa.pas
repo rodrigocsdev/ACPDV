@@ -119,8 +119,8 @@ end;
 
 procedure TPageAbrirCaixa.SpeedButton1Click(Sender: TObject);
 begin
- FController.Operador.AbrirCaixa(FList);
- if not Assigned(FProc) then
+FController.Operador.AbrirCaixa(FList);
+  if Assigned(FProc) then
   FProc(FController.Operador.VerificaCaixaAberto);
  Self.RemoveObject;
 end;
