@@ -142,3 +142,19 @@
 [Component Visual.] pnlTitle
 ----------------------------------------------------------------------
 
+[Data/Hora........] 06/07/2023 18:02:06
+[Mensagem.........] Access violation at address 008E0022 in module 'ACPDV.exe'. Read of address 00000000
+[Classe Exceção...] EAccessViolation
+[Formulário.......] PageFechamentoCaixa
+[Unit.............] Vcl.ExtCtrls
+[Component Visual.] pnlTitle
+----------------------------------------------------------------------
+
+[Data/Hora........] 06/07/2023 18:02:09
+[Mensagem.........] Access violation at address 00220C60. Read of address 00220C60
+[Classe Exceção...] EAccessViolation
+[Formulário.......] pageprincipal
+[Unit.............] Vcl.ExtCtrls
+[Component Visual.] pnlTitle
+----------------------------------------------------------------------
+
