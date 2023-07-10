@@ -1,0 +1,46 @@
+unit acpdv.model.core.EntityCaixa;
+
+interface
+
+uses
+ System.Generics.Collections;
+
+type
+ TEntityCaixa = class
+ private
+
+ public
+  class function New: TEntityCaixa;
+  function Dados(Lista: TDictionary<String, Variant>): TEntityCaixa;
+  function NumeroCaixaTurno(aOperador, aCaixa: String)
+    : TDictionary<String, Variant>;
+  function AbrirCaixa(Value: TDictionary<String, Variant>): TEntityCaixa;
+ end;
+
+implementation
+
+{ TEntityCaixa }
+
+function TEntityCaixa.AbrirCaixa(Value: TDictionary<String, Variant>)
+  : TEntityCaixa;
+begin
+
+end;
+
+function TEntityCaixa.Dados(Lista: TDictionary<String, Variant>): TEntityCaixa;
+begin
+
+end;
+
+class function TEntityCaixa.New: TEntityCaixa;
+begin
+ Result := Self.Create;
+end;
+
+function TEntityCaixa.NumeroCaixaTurno(aOperador, aCaixa: String)
+  : TDictionary<String, Variant>;
+begin
+
+end;
+
+end.

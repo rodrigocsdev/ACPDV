@@ -252,6 +252,7 @@
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
         <DCCReference Include="src\model\entidades\acpdv.model.entidade.adquirente.pas"/>
+        <DCCReference Include="src\model\core\acpdv.model.core.EntityCaixa.pas"/>
         <RcItem Include="assert\alerta.png">
             <ResourceType>RCDATA</ResourceType>
             <ResourceId>alerta</ResourceId>

@@ -97,7 +97,8 @@ uses
   acpdv.model.core.entityoperador in 'src\model\core\acpdv.model.core.entityoperador.pas' {EntityOperador: TDataModule},
   acpdv.controller in 'src\controller\acpdv.controller.pas',
   acpdv.view.componente.listatipopgfechamento in 'src\view\componente\acpdv.view.componente.listatipopgfechamento.pas' {ComponentListaFechamentoCaixa: TFrame},
-  acpdv.model.entidade.adquirente in 'src\model\entidades\acpdv.model.entidade.adquirente.pas';
+  acpdv.model.entidade.adquirente in 'src\model\entidades\acpdv.model.entidade.adquirente.pas',
+  acpdv.model.core.EntityCaixa in 'src\model\core\acpdv.model.core.EntityCaixa.pas';
 
 {$R *.res}
 
