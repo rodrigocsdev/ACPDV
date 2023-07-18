@@ -3,14 +3,19 @@ unit acpdv.model.core.EntityCaixa;
 interface
 
 uses
- System.Generics.Collections, Data.DB;
+ System.Generics.Collections,
+ Data.DB,
+ acpdv.model.enum,
+ acpdv.model.dao.CAIXA,
+ acpdv.model.dao.turno,
+ acpdv.model.dao.Operador;
 
 type
  TEntityCaixa = class
  private
   FLista: TDictionary<String, Variant>;
-procedure PreencheLista(DataSet: TDataSet; Table: String); overload;
-procedure PreencheLista(Lista:TDictionary<String, Variant>); overload;
+  procedure PreencheLista(DataSet: TDataSet; Table: String); overload;
+  procedure PreencheLista(Lista: TDictionary<String, Variant>); overload;
   constructor Create;
  public
   class function New: TEntityCaixa;
@@ -53,8 +58,10 @@ end;
 
 function TEntityCaixa.NumeroCaixaTurno(aOperador, aCaixa: String)
   : TDictionary<String, Variant>;
+var
+ lTipoTurno: TTipoTurno;
 begin
-
+ PreencheLista(TDAOCaixa.New.FindWhere('nome',))
 end;
 
 procedure TEntityCaixa.PreencheLista(Lista: TDictionary<String, Variant>);
@@ -64,10 +71,16 @@ end;
 
 procedure TEntityCaixa.PreencheLista(DataSet: TDataSet; Table: String);
 var
-  I: Integer;
+ I, F: Integer;
 begin
-       for I := 0 to Pred(DataSet.RecordCount) do
-
+ for I := 0 to Pred(DataSet.RecordCount) do
+ begin
+  for F := 0 to Pred(DataSet.FieldCount) do
+  begin
+   FLista.AddOrSetValue(DataSet.Fields[F].FieldName + '_' + Table,
+     DataSet.Fields[F].AsVariant);
+  end;
+ end;
 end;
 
 end.

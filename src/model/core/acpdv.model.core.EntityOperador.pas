@@ -17,13 +17,7 @@ uses
  acpdv.model.Entidade.caixamovimento;
 
 type
- TTipoTurno = (MANHA, TARDE, NOITE);
 
- TTipoTurnoHelper = record helper for TTipoTurno
-  function ToString: String;
-  function ToEnum(Value: String): TTipoTurno;
-  function ToTurno(Value: TDateTime): TTipoTurno;
- end;
 
  TEntityOperador = class(TDataModule)
   procedure DataModuleCreate(Sender: TObject);
@@ -39,8 +33,8 @@ type
  public
   class function New: TEntityOperador;
   function ValidarOperador(aUsuario, aSenha: String): Boolean;
-  function NumeroCaixaTurno(aOperador, aCaixa: String)
-    : TDictionary<String, Variant>;
+//  function NumeroCaixaTurno(aOperador, aCaixa: String)
+//    : TDictionary<String, Variant>;
   function VerificaCaixaAberto: Boolean;
   function AbrirCaixa(Value: TDictionary<String, Variant>): TEntityOperador;
  end;
@@ -85,31 +79,31 @@ begin
  Result := Self.Create(nil);
 end;
 
-function TEntityOperador.NumeroCaixaTurno(aOperador, aCaixa: String)
-  : TDictionary<String, Variant>;
-var
- lDataSetCaixa, lDataSetTurno, lDataSetOperador: TDataSet;
- lTipo: TTipoTurno;
- i: integer;
-begin
- Result := TDictionary<String, Variant>.Create;
-
- lDataSetCaixa := TDAOCaixa.New.FindWhere('nome', UpperCase(aCaixa)).DataSet;
- lDataSetTurno := TDAOTurno.New.FindWhere('nome',
-   lTipo.ToTurno(Now).ToString).DataSet;
- lDataSetOperador := TDAOOperador.New.FindWhere('nome',
-   UpperCase(aOperador)).DataSet;
-
- Result.Add('idoperador', lDataSetOperador.FieldByName('id').AsString);
- Result.Add('nomeoperador', lDataSetOperador.FieldByName('nome').AsString);
- Result.Add('senhaoperador', lDataSetOperador.FieldByName('senha').AsString);
-
- Result.Add('idcaixa', lDataSetCaixa.FieldByName('id').AsString);
- Result.Add('nomecaixa', lDataSetCaixa.FieldByName('nome').AsString);
- Result.Add('idturno', lDataSetTurno.FieldByName('id').AsString);
- Result.Add('nometurno', lDataSetTurno.FieldByName('nome').AsString);
- PreecheLista(Result);
-end;
+//function TEntityOperador.NumeroCaixaTurno(aOperador, aCaixa: String)
+//  : TDictionary<String, Variant>;
+//var
+// lDataSetCaixa, lDataSetTurno, lDataSetOperador: TDataSet;
+// lTipo: TTipoTurno;
+// i: integer;
+//begin
+// Result := TDictionary<String, Variant>.Create;
+//
+// lDataSetCaixa := TDAOCaixa.New.FindWhere('nome', UpperCase(aCaixa)).DataSet;
+// lDataSetTurno := TDAOTurno.New.FindWhere('nome',
+//   lTipo.ToTurno(Now).ToString).DataSet;
+// lDataSetOperador := TDAOOperador.New.FindWhere('nome',
+//   UpperCase(aOperador)).DataSet;
+//
+// Result.Add('idoperador', lDataSetOperador.FieldByName('id').AsString);
+// Result.Add('nomeoperador', lDataSetOperador.FieldByName('nome').AsString);
+// Result.Add('senhaoperador', lDataSetOperador.FieldByName('senha').AsString);
+//
+// Result.Add('idcaixa', lDataSetCaixa.FieldByName('id').AsString);
+// Result.Add('nomecaixa', lDataSetCaixa.FieldByName('nome').AsString);
+// Result.Add('idturno', lDataSetTurno.FieldByName('id').AsString);
+// Result.Add('nometurno', lDataSetTurno.FieldByName('nome').AsString);
+// PreecheLista(Result);
+//end;
 
 procedure TEntityOperador.PreecheLista(Value: TDictionary<String, Variant>);
 var
@@ -160,26 +154,6 @@ end;
 
 { TTipoTurnoHelper }
 
-function TTipoTurnoHelper.ToEnum(Value: String): TTipoTurno;
-begin
- Result := TTipoTurno(GetEnumValue(TypeInfo(TTipoTurno), UpperCase(Value)));
-end;
 
-function TTipoTurnoHelper.ToString: String;
-begin
- Result := GetEnumName(TypeInfo(TTipoTurno), integer(Self));
-end;
-
-function TTipoTurnoHelper.ToTurno(Value: TDateTime): TTipoTurno;
-begin
- if ((HourOf(Value) >= 6) and (HourOf(Value) <= 11)) then
-  Result := MANHA;
-
- if ((HourOf(Value) >= 12) and (HourOf(Value) <= 17)) then
-  Result := TARDE;
-
- if ((HourOf(Value) >= 18) and (HourOf(Value) <= 23)) then
-  Result := NOITE;
-end;
 
 end.

@@ -116,8 +116,8 @@
     <Transaction>2023/04/24 21:48:28.000.697,=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.Model.dao.pos.pas</Transaction>
     <Transaction>2023/04/24 21:48:28.000.371,=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.Model.dao.NfePagamento.pas</Transaction>
     <Transaction>2023/04/24 21:48:28.000.451,=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.Model.dao.Operador.pas</Transaction>
-    <Transaction>2023/04/24 21:48:28.000.190,=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.Model.dao.NfeInutilizacao.pas</Transaction>
     <Transaction>2023/04/24 21:48:28.000.541,=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.Model.dao.Origem.pas</Transaction>
+    <Transaction>2023/04/24 21:48:28.000.190,=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.Model.dao.NfeInutilizacao.pas</Transaction>
     <Transaction>2023/04/24 21:48:28.000.293,=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.Model.dao.NfeItem.pas</Transaction>
     <Transaction>2023/04/24 21:48:28.000.025,=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.Model.dao.nfe.pas</Transaction>
     <Transaction>2023/04/24 21:48:28.000.785,=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.Model.dao.produto.pas</Transaction>
@@ -184,11 +184,11 @@
     <Transaction>2023/04/25 19:06:52.000.354,=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.Model.dao.NfeItem.pas</Transaction>
     <Transaction>2023/04/25 19:06:52.000.802,=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.Model.dao.turno.pas</Transaction>
     <Transaction>2023/04/25 19:06:52.000.464,=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.Model.dao.Operador.pas</Transaction>
-    <Transaction>2023/04/25 19:06:52.000.299,=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.Model.dao.NfeInutilizacao.pas</Transaction>
+    <Transaction>2023/04/25 19:06:52.000.519,=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.Model.dao.Origem.pas</Transaction>
     <Transaction>2023/04/25 19:06:52.000.919,=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.Model.dao.unidade.pas</Transaction>
     <Transaction>2023/04/25 19:06:52.000.863,=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.Model.dao.UF.pas</Transaction>
     <Transaction>2023/04/25 19:06:52.000.189,=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.Model.dao.nfe.pas</Transaction>
-    <Transaction>2023/04/25 19:06:52.000.519,=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.Model.dao.Origem.pas</Transaction>
+    <Transaction>2023/04/25 19:06:52.000.299,=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.Model.dao.NfeInutilizacao.pas</Transaction>
     <Transaction>2023/04/25 19:06:52.000.629,=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.Model.dao.pos.pas</Transaction>
     <Transaction>2023/05/09 08:40:04.000.977,=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\core\acpdv.model.core.EntityOperador.pas</Transaction>
     <Transaction>2023/05/09 08:42:15.000.705,=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\controller\acpdv.controller.pas</Transaction>
