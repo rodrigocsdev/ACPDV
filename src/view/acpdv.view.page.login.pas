@@ -43,6 +43,7 @@ type
     procedure btnLogarClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure FormShow(Sender: TObject);
   private
     FController: TController;
     FFundo: TFundoTransparente;
@@ -89,6 +90,11 @@ begin
   FFundo := TFundoTransparente.Create(nil);
   FFundo.Parent := pnlImage;
   FFundo.Show;
+end;
+
+procedure TPageLogin.FormShow(Sender: TObject);
+begin
+edtUsuario.SetFocus;
 end;
 
 function TPageLogin.Informacao(Value: TProc<String>): TPageLogin;

@@ -8,7 +8,9 @@ uses
  acpdv.model.enum,
  acpdv.model.dao.CAIXA,
  acpdv.model.dao.turno,
- acpdv.model.dao.Operador;
+ acpdv.model.dao.Operador,
+ System.SysUtils,
+ acpdv.model.dao.CAIXA_MOVIMENTO;
 
 type
  TEntityCaixa = class
@@ -32,13 +34,24 @@ implementation
 
 function TEntityCaixa.AbrirCaixa(Value: TDictionary<String, Variant>)
   : TEntityCaixa;
+var
+ lDataSet: TDataSet;
 begin
 
 end;
 
 function TEntityCaixa.CaixaAberto: Boolean;
+var
+ lDataSet: TDataSet;
 begin
-
+ Result := False;
+ lDataSet := TDAOCaixaMovimento.New.FindWhere('id_caixa',
+   FLista['ID_CAIXA']).DataSet;
+ lDataSet.Locate('SITUACAO', 'A', []);
+ if not lDataSet.IsEmpty then
+ begin
+    Result := True;
+ end;
 end;
 
 constructor TEntityCaixa.Create;
@@ -61,7 +74,13 @@ function TEntityCaixa.NumeroCaixaTurno(aOperador, aCaixa: String)
 var
  lTipoTurno: TTipoTurno;
 begin
- PreencheLista(TDAOCaixa.New.FindWhere('nome',))
+ PreencheLista(TDAOCaixa.New.FindWhere('nome', UpperCase(aCaixa))
+   .DataSet, 'CAIXA');
+ PreencheLista(TDAOTurno.New.FindWhere('nome', lTipoTurno.ToTurno(now).ToString)
+   .DataSet, 'TURNO');
+ PreencheLista(TDAOOperador.New.FindWhere('nome', UpperCase(aOperador)).DataSet,
+   'OPERADOR');
+ Result := FLista;
 end;
 
 procedure TEntityCaixa.PreencheLista(Lista: TDictionary<String, Variant>);

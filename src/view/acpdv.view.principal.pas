@@ -405,7 +405,7 @@ begin
  TPageLogin.New(Self).Embed(pnlMaster).INFORMACAO(
   procedure(Value: String)
   begin
-   FCaixa := FController.Operador.NumeroCaixaTurno(Value, 'Caixa 1');
+   FCaixa := FController.Caixa.NumeroCaixaTurno(Value, 'Caixa 1');
 
    VerificaCaixaFechadoAberto(False);
   end).Show;
@@ -442,7 +442,7 @@ procedure Tpageprincipal.VerificaCaixaFechadoAberto(Value: Boolean);
 begin
  if not Value then
  begin
-  if not FController.Operador.VerificaCaixaAberto then
+  if not FController.Caixa.CaixaAberto then
   begin
    pnlTitle.Caption := 'Caixa Fechado';
    AjustarCampos;
