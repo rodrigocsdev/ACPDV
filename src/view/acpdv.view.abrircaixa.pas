@@ -117,6 +117,8 @@ end;
 
 procedure TPageAbrirCaixa.SpeedButton1Click(Sender: TObject);
 begin
+  FList.AddOrSetValue('SALDOINICIAL',
+    StringReplace(edtValorSuprimento.Text,'R$','',[rfReplaceAll]));
   FController.Caixa.AbrirCaixa(FList);
   if Assigned(FProc) then
     FProc(FController.Caixa.CaixaAberto);

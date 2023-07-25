@@ -1,33 +1,48 @@
 ﻿[Closed Files]
-File_0=TSourceModule,'c:\program files (x86)\embarcadero\studio\21.0\SOURCE\VCL\Vcl.Controls.pas',0,1,7577,1,7597,0,0,,
+File_0=TSourceModule,'C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\entidades\acpdv.Model.Entidade.caixamovimento.pas',0,1,86,33,113,0,0,,
 
 [Modules]
-Module0=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\view\acpdv.view.page.login.pas
-Module1=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\view\acpdv.view.principal.pas
-Module2=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\core\acpdv.model.core.EntityCaixa.pas
-Module3=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\controller\acpdv.controller.pas
-Count=4
+Module0=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.model.dao.adquirente.pas
+Module1=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\view\acpdv.view.page.fechamentocaixa.pas
+Module2=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\view\acpdv.view.abrircaixa.pas
+Module3=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\view\acpdv.view.principal.pas
+Module4=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.Model.dao.CAIXA_MOVIMENTO.pas
+Module5=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\core\acpdv.model.core.EntityCaixa.pas
+Module6=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.Model.dao.Operador.pas
+Count=7
 EditWindowCount=1
 
-[C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\view\acpdv.view.page.login.pas]
+[C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.model.dao.adquirente.pas]
+ModuleType=TSourceModule
+
+[C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\view\acpdv.view.page.fechamentocaixa.pas]
+ModuleType=TSourceModule
+
+[C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\view\acpdv.view.abrircaixa.pas]
 ModuleType=TSourceModule
 
 [C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\view\acpdv.view.principal.pas]
 ModuleType=TSourceModule
 
+[C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.Model.dao.CAIXA_MOVIMENTO.pas]
+ModuleType=TSourceModule
+
 [C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\core\acpdv.model.core.EntityCaixa.pas]
 ModuleType=TSourceModule
 
-[C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\controller\acpdv.controller.pas]
+[C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.Model.dao.Operador.pas]
 ModuleType=TSourceModule
 
 [EditWindow0]
-ViewCount=4
-CurrentEditView=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\view\acpdv.view.page.login.pas
+ViewCount=7
+CurrentEditView=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.model.dao.adquirente.pas
 View0=0
 View1=1
 View2=2
 View3=3
+View4=4
+View5=5
+View6=6
 PercentageSizes=1
 Create=1
 Visible=1
@@ -61,8 +76,8 @@ BottomMiddelPanelData=0000080001020200000009000000446F636B5369746530100000004772
 CustomEditViewType=TEditView
 Module=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\view\acpdv.view.principal.pas
 CursorX=1
-CursorY=411
-TopLine=391
+CursorY=392
+TopLine=372
 LeftCol=1
 Elisions=
 Bookmarks=
@@ -70,36 +85,69 @@ EditViewName=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\view\acpdv.view.principa
 
 [View1]
 CustomEditViewType=TEditView
-Module=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\view\acpdv.view.page.login.pas
-CursorX=1
-CursorY=74
-TopLine=53
+Module=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\view\acpdv.view.abrircaixa.pas
+CursorX=29
+CursorY=124
+TopLine=98
 LeftCol=1
 Elisions=
 Bookmarks=
-EditViewName=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\view\acpdv.view.page.login.pas
+EditViewName=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\view\acpdv.view.abrircaixa.pas
 
 [View2]
 CustomEditViewType=TEditView
-Module=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\controller\acpdv.controller.pas
-CursorX=1
-CursorY=26
+Module=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\view\acpdv.view.page.fechamentocaixa.pas
+CursorX=28
+CursorY=19
 TopLine=1
 LeftCol=1
 Elisions=
 Bookmarks=
-EditViewName=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\controller\acpdv.controller.pas
+EditViewName=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\view\acpdv.view.page.fechamentocaixa.pas
 
 [View3]
 CustomEditViewType=TEditView
+Module=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.model.dao.adquirente.pas
+CursorX=19
+CursorY=9
+TopLine=1
+LeftCol=1
+Elisions=
+Bookmarks=
+EditViewName=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.model.dao.adquirente.pas
+
+[View4]
+CustomEditViewType=TEditView
 Module=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\core\acpdv.model.core.EntityCaixa.pas
-CursorX=1
-CursorY=55
-TopLine=34
+CursorX=99
+CursorY=38
+TopLine=13
 LeftCol=1
 Elisions=
 Bookmarks=
 EditViewName=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\core\acpdv.model.core.EntityCaixa.pas
+
+[View5]
+CustomEditViewType=TEditView
+Module=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.Model.dao.Operador.pas
+CursorX=1
+CursorY=14
+TopLine=1
+LeftCol=1
+Elisions=
+Bookmarks=
+EditViewName=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.Model.dao.Operador.pas
+
+[View6]
+CustomEditViewType=TEditView
+Module=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.Model.dao.CAIXA_MOVIMENTO.pas
+CursorX=37
+CursorY=157
+TopLine=117
+LeftCol=1
+Elisions=
+Bookmarks=
+EditViewName=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.Model.dao.CAIXA_MOVIMENTO.pas
 
 [Watches]
 Count=0
@@ -126,13 +174,11 @@ Dockable=1
 StayOnTop=0
 
 [Breakpoints]
-Count=6
+Count=4
 Breakpoint0='C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.model.dao.adquirente.pas',115,'',0,1,'',1,0,0,'',1,'','','',0,''
 Breakpoint1='C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.model.dao.adquirente.pas',135,'',0,1,'',1,0,0,'',1,'','','',0,''
-Breakpoint2='C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\core\acpdv.model.core.EntityOperador.pas',139,'',0,1,'',1,0,0,'',1,'','','',0,''
-Breakpoint3='C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\view\acpdv.view.principal.pas',408,'',0,1,'',1,0,0,'',1,'','','',0,''
-Breakpoint4='C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\view\acpdv.view.principal.pas',445,'',0,1,'',1,0,0,'',1,'','','',0,''
-Breakpoint5='C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\core\acpdv.model.core.EntityCaixa.pas',47,'',0,1,'',1,0,0,'',1,'','','',0,''
+Breakpoint2='C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\view\acpdv.view.abrircaixa.pas',122,'',0,1,'',1,0,0,'',1,'','','',0,''
+Breakpoint3='C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\core\acpdv.model.core.EntityCaixa.pas',41,'',0,1,'',1,0,0,'',1,'','','',0,''
 
 [EmbarcaderoWin32Debugger_AddressBreakpoints]
 Count=0
@@ -236,11 +282,6 @@ LRDockWidth=1896
 Dockable=1
 StayOnTop=0
 SplitPos=111
-
-[PropInspDesignerSelection]
-ArrangeBy=Name
-SelectedItem=Action,
-ExpandedItems=Anchors=0,BorderIcons=0,LiveBindings=0
 
 [frmDesignPreview]
 PercentageSizes=1

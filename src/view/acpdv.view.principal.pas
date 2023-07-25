@@ -152,8 +152,6 @@ type
     procedure edtQuantidadeKeyPress(Sender: TObject; var Key: Char);
     procedure btnCadastrarConfiguracaoBDClick(Sender: TObject);
   private
-    FLogin: TPageLogin;
-    FF6: Integer;
     FIndex: Integer;
     FTotal: Currency;
     FController: TController;
@@ -221,6 +219,8 @@ begin
 end;
 
 procedure Tpageprincipal.edtProdutoKeyPress(Sender: TObject; var Key: Char);
+var
+  lListaProduto: TDictionary<String, Variant>;
 begin
   if not FController.Caixa.CaixaAberto then
   begin
@@ -258,17 +258,46 @@ begin
           if edtQuantidade.Text = '0,000' then
             edtQuantidade.Clear;
 
+        lListaProduto := TDictionary<String, Variant>.Create;
+        try
+          Inc(FIndex);
+
+          if not FController.Produto.GetProdutoById(edtProduto.Text, lListaProduto) then
+          begin
+            TPageMensagens.New(Self).Mensagem('Código do produto não foi encontrado!', ALERTA)
+            .Embed(pnlMaster);
+            Exit;
+          end;
+
           edtQuantidade.Text := FormatFloat(',0.000',
             StrToFloatDef(edtQuantidade.Text, 1));
-          lblPreco.Caption := FormatCurr('"R$ ",0.00', 0);
+          lblPreco.Caption := FormatCurr('"R$ ",0.00', lListaProduto['VL_UNITARIO_PRODUTO']);
           lblSubTotal.Caption := FormatCurr('"R$ ",0.00',
-            0 * StrToFloatDef(edtQuantidade.Text, 1));
+            lListaProduto['VL_UNITARIO_PRODUTO'] * StrToFloatDef(edtQuantidade.Text, 1));
 
-          FTotal := FTotal + (0 * StrToFloatDef(edtQuantidade.Text, 1));
+          FTotal := FTotal + (lListaProduto['VL_UNITARIO_PRODUTO']
+            * StrToFloatDef(edtQuantidade.Text, 1));
+
           lblTotalCompra.Caption := FormatCurr('"R$ ",0.00', FTotal);
 
-          edtProduto.Clear;
-          edtProduto.SetFocus;
+
+          TComponenteListaItem.New(Self)
+            .Embed(ListBoxItems)
+            .Item(FIndex)
+            .Codigo(lListaProduto['ID_PRODUTO'])
+            .Descricao(lListaProduto['DESCRICAO_PRODUTO'])
+            .Quantidade(StrToFloatDef(edtQuantidade.Text,1))
+            .ValorUnitario(lListaProduto['VL_UNITARIO_PRODUTO'])
+            .Alinhamento(alTop)
+            .Nome('FRAME'+FIndex.ToString)
+            .Build;
+
+        finally
+          lListaProduto.Free;
+        end;
+
+        edtProduto.Clear;
+        edtProduto.SetFocus;
         end;
       end;
   end;
@@ -312,6 +341,7 @@ var
   lKeyEvent: TKeyEvent;
   I: Integer;
 begin
+  lKeyEvent := nil;
 
   for I := Pred(pnlMaster.ControlCount) downto 0 do
   begin

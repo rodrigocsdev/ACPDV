@@ -26,6 +26,7 @@ end;
 
 function TUnidade.SetId(const Value :String): TUnidade;
 begin
+  Result := Self;
   FId := Value;
 end;
 
@@ -36,6 +37,7 @@ end;
 
 function TUnidade.SetUnidade(const Value :String): TUnidade;
 begin
+  Result := Self;
   FUnidade := Value;
 end;
 

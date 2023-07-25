@@ -43,7 +43,6 @@ type
     procedure btnLogarClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
-    procedure FormShow(Sender: TObject);
   private
     FController: TController;
     FFundo: TFundoTransparente;
@@ -102,10 +101,5 @@ class function TPageLogin.New(AOWner: TComponent): TPageLogin;
 begin
   Result := Self.Create(AOWner);
 end;
- procedure TPageLogin.FormShow(Sender: TObject);
-begin
-edtUsuario.SetFocus;
-end;
-
 
 end.

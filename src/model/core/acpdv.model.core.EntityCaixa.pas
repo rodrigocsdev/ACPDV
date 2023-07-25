@@ -52,16 +52,9 @@ begin
 end;
 
 function TEntityCaixa.CaixaAberto: Boolean;
-var
-  lDataSet: TDataSet;
 begin
-  Result := False;
-  lDataSet := TDAOCaixaMovimento.New.FindWhere('id_caixa', FLista['ID_CAIXA']).DataSet;
-
-  lDataSet.Locate('SITUACAO', 'A',[]);
-
-  if lDataSet.IsEmpty then
-    Result := True;
+  Result := TDAOCaixaMovimento.New.FindWhere('id_caixa', FLista['ID_CAIXA'])
+    .DataSet.Locate('SITUACAO', 'A',[]);
 end;
 
 constructor TEntityCaixa.Create;

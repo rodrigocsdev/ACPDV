@@ -98,7 +98,8 @@ uses
   acpdv.controller in 'src\controller\acpdv.controller.pas',
   acpdv.view.componente.listatipopgfechamento in 'src\view\componente\acpdv.view.componente.listatipopgfechamento.pas' {ComponentListaFechamentoCaixa: TFrame},
   acpdv.model.entidade.adquirente in 'src\model\entidades\acpdv.model.entidade.adquirente.pas',
-  acpdv.model.core.EntityCaixa in 'src\model\core\acpdv.model.core.EntityCaixa.pas';
+  acpdv.model.core.EntityCaixa in 'src\model\core\acpdv.model.core.EntityCaixa.pas',
+  acpdv.model.core.EntityProduto in 'src\model\core\acpdv.model.core.EntityProduto.pas';
 
 {$R *.res}
 
