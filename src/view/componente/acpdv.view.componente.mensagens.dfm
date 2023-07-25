@@ -185,14 +185,12 @@ object PageMensagens: TPageMensagens
         AlignWithMargins = True
         Left = 3
         Top = 20
-        Width = 394
-        Height = 67
+        Width = 75
+        Height = 19
         Margins.Top = 20
         Align = alClient
         Alignment = taCenter
         Caption = 'Mensagem'
-        ExplicitWidth = 75
-        ExplicitHeight = 19
       end
     end
   end

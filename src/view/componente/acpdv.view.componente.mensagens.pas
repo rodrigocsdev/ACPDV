@@ -42,7 +42,9 @@ type
     procedure btnOkClick(Sender: TObject);
     procedure btnConfirmarClick(Sender: TObject);
   private
-    FProc: TProc<TObject>;
+    FProcok: TProc<TObject>;
+    FProcCancelar: TProc<TObject>;
+    FProcConfirmar: TProc<TObject>;
     procedure Responsive;
     procedure ModelarMensagem(const aMensagem: String; aTipo: TTipoMensagem);
     procedure TipoMensagem(aTipo: TTipoMensagem);
@@ -70,41 +72,39 @@ end;
 
 procedure TPageMensagens.btnCancelarClick(Sender: TObject);
 begin
-  if Assigned(FProc) then
-    FProc(Sender);
   Self.RemoveObject;
 end;
 
 procedure TPageMensagens.btnConfirmarClick(Sender: TObject);
 begin
-  if Assigned(FProc) then
-    FProc(Sender);
+  if Assigned(FProcConfirmar) then
+    FProcConfirmar(Sender);
   Self.RemoveObject;
 end;
 
 procedure TPageMensagens.btnOkClick(Sender: TObject);
 begin
-  if Assigned(FProc) then
-    FProc(Sender);
+  if Assigned(FProcok) then
+    FProcok(Sender);
   Self.RemoveObject;
 end;
 
 function TPageMensagens.ClickCancelar(Proc: TProc<TObject>): TPageMensagens;
 begin
   Result := Self;
-  FProc := Proc;
+  FProcCancelar := Proc;
 end;
 
 function TPageMensagens.ClickConfirmar(Proc: TProc<TObject>): TPageMensagens;
 begin
   Result := Self;
-  FProc := Proc;
+  FProcConfirmar := Proc;
 end;
 
 function TPageMensagens.ClickOk(Proc: TProc<TObject>): TPageMensagens;
 begin
   Result := Self;
-  FProc := Proc;
+  FProcok := Proc;
 end;
 
 function TPageMensagens.Embed(aParent: TPanel): TPageMensagens;

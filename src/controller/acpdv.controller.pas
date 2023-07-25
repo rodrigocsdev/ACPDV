@@ -3,21 +3,21 @@ unit acpdv.controller;
 interface
 
 uses
- acpdv.model.core.entityoperador,
- acpdv.model.core.EntityCaixa;
+  acpdv.model.core.entityoperador,
+  acpdv.model.core.entitycaixa;
 
 type
- TController = class
- private
-  FOperador: TEntityOperador;
-  FCaixa: TEntityCaixa;
- public
-  constructor Create;
-  destructor Destroy; override;
-  class function New: TController;
-  function Operador: TEntityOperador;
-  function Caixa: TEntityCaixa;
- end;
+  TController = class
+  private
+    FOperador: TEntityOperador;
+    FCaixa: TEntityCaixa;
+  public
+    constructor Create;
+    destructor Destroy; override;
+    class function New: TController;
+    function Operador: TEntityOperador;
+    function Caixa: TEntityCaixa;
+  end;
 
 implementation
 
@@ -25,11 +25,9 @@ implementation
 
 function TController.Caixa: TEntityCaixa;
 begin
- if not Assigned(FCaixa) then
- begin
-  FCaixa := TEntityCaixa.New;
- end;
- Result := FCaixa;
+  if not Assigned(FCaixa) then
+    FCaixa := TEntityCaixa.New;
+  Result := FCaixa;
 end;
 
 constructor TController.Create;
@@ -39,20 +37,20 @@ end;
 
 destructor TController.Destroy;
 begin
- FOperador.Free;
- inherited;
+  FOperador.Free;
+  inherited;
 end;
 
 class function TController.New: TController;
 begin
- Result := Self.Create;
+  Result := Self.Create;
 end;
 
 function TController.Operador: TEntityOperador;
 begin
- if not Assigned(FOperador) then
-  FOperador := TEntityOperador.New;
- Result := FOperador;
+  if not Assigned(FOperador) then
+    FOperador := TEntityOperador.New;
+  Result := FOperador;
 end;
 
 end.

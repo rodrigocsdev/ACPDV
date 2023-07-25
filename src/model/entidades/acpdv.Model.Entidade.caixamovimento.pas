@@ -15,6 +15,8 @@ type
     FDataAbertura :TDateTime;
     FDataFechamento :TDateTime;
     FSituacao :String;
+    FValorTotal: Currency;
+    FSaldoInicial: Currency;
   public
     function GetId :Integer;
     function SetId(const Value :Integer): TCaixaMovimento;
@@ -25,11 +27,15 @@ type
     function GetIdTurno :Integer;
     function SetIdTurno(const Value :Integer): TCaixaMovimento;
     function GetDataAbertura :TDateTime;
-    //function SetDataAbertura(const Value :TDateTime): TCaixaMovimento;
     function GetDataFechamento :TDateTime;
     function SetDataFechamento(const Value :TDateTime): TCaixaMovimento;
     function GetSituacao :String;
     function SetSituacao(const Value :String): TCaixaMovimento;
+    function SetValorTotal(const Value :Currency): TCaixaMovimento;
+    function GetValorTotal :Currency;
+    function SetSaldoInicial(const Value :Currency): TCaixaMovimento;
+    function GetSaldoInicial :Currency;
+
 
     class function New: TCaixaMovimento;
 end;
@@ -43,7 +49,7 @@ end;
 
 function TCaixaMovimento.SetId(const Value :Integer): TCaixaMovimento;
 begin
-  Result := Self;
+  Result := SElf;
   FId := Value;
 end;
 
@@ -54,7 +60,7 @@ end;
 
 function TCaixaMovimento.SetIdOperador(const Value :Integer): TCaixaMovimento;
 begin
-  Result := Self;
+  Result := SElf;
   FIdOperador := Value;
 end;
 
@@ -65,7 +71,7 @@ end;
 
 function TCaixaMovimento.SetIdCaixa(const Value :Integer): TCaixaMovimento;
 begin
-  Result := Self;
+  Result := SElf;
   FIdCaixa := Value;
 end;
 
@@ -76,7 +82,7 @@ end;
 
 function TCaixaMovimento.SetIdTurno(const Value :Integer): TCaixaMovimento;
 begin
-  Result := Self;
+  Result := SElf;
   FIdTurno := Value;
 end;
 
@@ -85,19 +91,14 @@ begin
   Result := FIdTurno;
 end;
 
-//function TCaixaMovimento.SetDataAbertura(const Value :TDateTime): TCaixaMovimento;
-//begin
-//  FDataAbertura := Value;
-//end;
-
 function TCaixaMovimento.GetDataAbertura :TDateTime;
 begin
-  Result := Now;
+  Result := now;
 end;
 
 function TCaixaMovimento.SetDataFechamento(const Value :TDateTime): TCaixaMovimento;
 begin
-  Result := Self;
+  Result := SElf;
   FDataFechamento := Value;
 end;
 
@@ -106,20 +107,38 @@ begin
   Result := FDataFechamento;
 end;
 
-function TCaixaMovimento.SetSituacao(const Value :String): TCaixaMovimento;
+function TCaixaMovimento.SetSaldoInicial(
+  const Value: Currency): TCaixaMovimento;
 begin
   Result := Self;
-  if not Value.IsEmpty then
-  begin
+  FSaldoInicial := Value;
+end;
+
+function TCaixaMovimento.SetSituacao(const Value :String): TCaixaMovimento;
+begin
+  Result := SElf;
   FSituacao := Value;
-  Exit;
-  end;
-  FSituacao := 'A';
+end;
+
+function TCaixaMovimento.SetValorTotal(const Value: Currency): TCaixaMovimento;
+begin
+  Result := Self;
+  FValorTotal := VAlue;
+end;
+
+function TCaixaMovimento.GetSaldoInicial: Currency;
+begin
+  Result := FSaldoInicial;
 end;
 
 function TCaixaMovimento.GetSituacao :String;
 begin
   Result := FSituacao;
+end;
+
+function TCaixaMovimento.GetValorTotal: Currency;
+begin
+  Result := FValorTotal;
 end;
 
 end.

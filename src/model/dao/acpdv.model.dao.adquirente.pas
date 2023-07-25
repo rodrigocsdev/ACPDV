@@ -6,8 +6,8 @@ uses
   System.Generics.Collections,
   Data.DB,
   acpdv.model.dao.interfaces,
-  acpdv.model.entidade.adquirente,
-  acpdv.model.conexao;
+  acpdv.model.conexao,
+  acpdv.model.entidade.adquirente;
 
 type
   TDAOAdquirente = class(TInterfacedObject, iDAO<TAdquirente>)

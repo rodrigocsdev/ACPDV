@@ -20,7 +20,7 @@ type
   public
     constructor Create;
     destructor Destroy; override;
-	class function New: TDAOOperador;
+    class function New: TDAOOperador;
     function Listar: iDAO<TOperador>;
     function ListarPorId(Id: Variant): iDAO<TOperador>;
     function Excluir(aId: Variant): iDAO<TOperador>; overload;
@@ -31,7 +31,8 @@ type
     function DataSet: TDataSet;
     function This: TOperador;
     function These: TObjectList<TOperador>;
-	function FindWhere(aField: String; Value: Variant): iDAO<TOperador>;
+
+    function FindWhere(aField: String; Value: Variant): iDAO<TOperador>;
   end;
 
 implementation
@@ -76,10 +77,12 @@ begin
     .SetNome(FDataSet.FieldByName('nome').AsString)
     .SetSenha(FDataSet.FieldByName('senha').AsString);
 end;
+
 class function TDAOOperador.New: TDAOOperador;
 begin
   Result := Self.Create;
 end;
+
 function TDAOOperador.Excluir(aId: Variant): iDAO<TOperador>;
 begin
   Result := Self;
@@ -92,6 +95,7 @@ begin
   FConexao.SQL('Delete from Operador where id=?')
     .Params(0, FOperador.GetId).ExecSQL;
 end;
+
 function TDAOOperador.FindWhere(aField: String;
   Value: Variant): iDAO<TOperador>;
 begin
@@ -100,6 +104,7 @@ begin
   FConexao.SQL('select * from operador where '+aField+'=?')
   .Params(0,Value).Open.DataSet;
 end;
+
 function TDAOOperador.Atualizar: iDAO<TOperador>;
 begin
   Result := Self;

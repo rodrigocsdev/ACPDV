@@ -7,6 +7,7 @@ uses
   Winapi.Messages,
   System.SysUtils,
   System.Variants,
+  System.Generics.Collections,
   System.Classes,
   Vcl.Graphics,
   Vcl.Controls,
@@ -15,7 +16,7 @@ uses
   Vcl.Buttons,
   Vcl.StdCtrls,
   Vcl.ExtCtrls, acpdv.model.caixa, acpdv.model.enum,
-  acpdv.view.componente.listatipopgfechamento;
+  acpdv.view.componente.listatipopgfechamento, acpdv.controller;
 
 type
   TPageFechamentoCaixa = class(TForm)
@@ -49,7 +50,9 @@ type
     procedure SpeedButton3Click(Sender: TObject);
     procedure SpeedButton2Click(Sender: TObject);
   private
-    FProc: TProc<TCaixa>;
+    FController: TController;
+    FProc : TProc<Boolean>;
+    FFechamento: TDictionary<String, Variant>;
     FIndex: Integer;
     FLista: TComponentListaFechamentoCaixa;
     procedure Responsive;
@@ -57,7 +60,8 @@ type
   public
     class function New(AOwner: TComponent): TPageFechamentoCaixa;
     function Embed(Value: TWinControl): TPageFechamentoCaixa;
-    function Informacoes(Value: TProc<TCaixa>): TPageFechamentoCaixa;
+    function Informacoes(Value: TDictionary<String, Variant>): TPageFechamentoCaixa;
+    function ValidarCaixa(Value: TProc<Boolean>): TPageFechamentoCaixa;
   end;
 
 implementation
@@ -75,6 +79,8 @@ procedure TPageFechamentoCaixa.FormCreate(Sender: TObject);
 var
   i: TTipoPagamento;
 begin
+  FController:= TController.New;
+  FFechamento := TDictionary<String,Variant>.Create;
   Responsive;
   ComboBox1.Items.Clear;
   for I := Low(TTipoPagamento) to High(TTipoPagamento) do
@@ -98,10 +104,13 @@ begin
   Responsive;
 end;
 
-function TPageFechamentoCaixa.Informacoes(Value: TProc<TCaixa>): TPageFechamentoCaixa;
+function TPageFechamentoCaixa.Informacoes(Value: TDictionary<String, Variant>): TPageFechamentoCaixa;
+var
+  lKey: String;
 begin
   Result := Self;
-  FProc := Value;
+  for lKey in Value.Keys do
+    FFechamento.AddOrSetValue(lKey, Value[lKey]);
 end;
 
 class function TPageFechamentoCaixa.New(AOwner: TComponent): TPageFechamentoCaixa;
@@ -135,29 +144,27 @@ begin
     .Nome('Frame' + FIndex.ToString)
     .Click(RemoveIntemLista)
     .Alinhamento(alTop);
+
+  FFechamento.AddOrSetValue(ComboBox1.Text,StringReplace(Edit1.Text,'R$','',[rfReplaceAll]));
 end;
 
 procedure TPageFechamentoCaixa.SpeedButton2Click(Sender: TObject);
-var
-  lCaixa: TCaixa;
-  lTurno: TTurno;
-  lData: TDateTime;
 begin
-  lData := Now;
-  lCaixa := TCaixa.New;
-  try
-    lCaixa.Aberto := False;
-    lCaixa.DataHoraFechamento := lData;
-    FProc(lCaixa);
-  finally
-    lcaixa.DisposeOf;
-    Self.Close;
-  end;
+  FController.Caixa.FecharCaixa(FFechamento);
+  FProc(FController.Caixa.CaixaAberto);
+  close;
 end;
 
 procedure TPageFechamentoCaixa.SpeedButton3Click(Sender: TObject);
 begin
   Close;
+end;
+
+function TPageFechamentoCaixa.ValidarCaixa(
+  Value: TProc<Boolean>): TPageFechamentoCaixa;
+begin
+  Result := Self;
+  FProc := Value;
 end;
 
 end.

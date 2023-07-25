@@ -92,11 +92,6 @@ begin
   FFundo.Show;
 end;
 
-procedure TPageLogin.FormShow(Sender: TObject);
-begin
-edtUsuario.SetFocus;
-end;
-
 function TPageLogin.Informacao(Value: TProc<String>): TPageLogin;
 begin
   Result := Self;
@@ -107,5 +102,10 @@ class function TPageLogin.New(AOWner: TComponent): TPageLogin;
 begin
   Result := Self.Create(AOWner);
 end;
+ procedure TPageLogin.FormShow(Sender: TObject);
+begin
+edtUsuario.SetFocus;
+end;
+
 
 end.
