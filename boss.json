@@ -1,0 +1,12 @@
+{
+	"name": "ac-pdv",
+	"description": "",
+	"version": "1.0.0",
+	"homepage": "",
+	"mainsrc": "./",
+	"projects": [],
+	"dependencies": {
+		"https://github.com/academiadocodigo/router4delphi": "^1.0.8",
+		"https://github.com/spinettaro/delphi-event-bus": "^v2.1"
+	}
+}

@@ -6,3 +6,11 @@
 [Component Visual.] edtUsuario
 ----------------------------------------------------------------------
 
+[Data/Hora........] 25/07/2023 20:49:18
+[Mensagem.........] A component named FramePix already exists
+[Classe Exceção...] EComponentError
+[Formulário.......] pageprincipal
+[Unit.............] Vcl.StdCtrls
+[Component Visual.] edtProduto
+----------------------------------------------------------------------
+

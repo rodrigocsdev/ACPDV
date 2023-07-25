@@ -1,0 +1,22 @@
+{
+	"hash": "d41d8cd98f00b204e9800998ecf8427e",
+	"updated": "2023-01-25T10:44:56.8714498-03:00",
+	"installedModules": {
+		"https://github.com/academiadocodigo/router4delphi": {
+			"name": "router4delphi",
+			"version": "1.0.8",
+			"hash": "e0b4770b6137fb1dddd17b6ffdaad99f",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
+		"https://github.com/spinettaro/delphi-event-bus": {
+			"name": "delphi-event-bus",
+			"version": "v2.1",
+			"hash": "75e539658d434fa2c4e413901e8f7e28",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		}
+	}
+}

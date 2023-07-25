@@ -1,6 +1,6 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
-        <ProjectGuid>{6E77333F-3883-46FE-A2F8-9BB03E99C57A}</ProjectGuid>
+        <ProjectGuid>{8BBDE295-4157-4326-B772-C81ADDB9DD12}</ProjectGuid>
         <ProjectVersion>19.2</ProjectVersion>
         <FrameworkType>VCL</FrameworkType>
         <Base>True</Base>
@@ -58,6 +58,7 @@
         <UWP_DelphiLogo44>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png</UWP_DelphiLogo44>
         <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
         <SanitizedProjectName>ACPDV</SanitizedProjectName>
+        <DCC_UnitSearchPath>modules\.dcp;modules\.dcu;modules;modules\delphi-event-bus\samples\AccessRemoteData;modules\delphi-event-bus\samples\Analytics;modules\delphi-event-bus\samples\WeatherStation;modules\delphi-event-bus\samples\vclmessaging;modules\delphi-event-bus\source;modules\delphi-event-bus\tests;modules\router4delphi\src;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <DCC_UsePackage>DBXSqliteDriver;RESTComponents;DBXDb2Driver;DBXInterBaseDriver;vclactnband;vclFireDAC;bindcompvclsmp;emsclientfiredac;DataSnapFireDAC;tethering;svnui;FireDACADSDriver;ComponentesVisuais;DBXMSSQLDriver;DatasnapConnectorsFreePascal;FireDACMSSQLDriver;vcltouch;vcldb;bindcompfmx;svn;DBXOracleDriver;inetdb;FmxTeeUI;emsedge;FireDACIBDriver;fmx;fmxdae;vcledge;vclib;FireDACDBXDriver;dbexpress;IndyCore;vclx;dsnap;DataSnapCommon;emsclient;FireDACCommon;RESTBackendComponents;DataSnapConnectors;VCLRESTComponents;soapserver;vclie;bindengine;DBXMySQLDriver;CloudService;FireDACOracleDriver;FireDACMySQLDriver;DBXFirebirdDriver;FireDACCommonODBC;FireDACCommonDriver;DataSnapClient;inet;bindcompdbx;IndyIPCommon;vcl;DBXSybaseASEDriver;IndyIPServer;IndySystem;FireDACDb2Driver;bindcompvclwinx;dsnapcon;FireDACMSAccDriver;FireDACInfxDriver;fmxFireDAC;vclimg;TeeDB;FireDAC;emshosting;FireDACSqliteDriver;FireDACPgDriver;ibmonitor;FireDACASADriver;DBXOdbcDriver;FireDACTDataDriver;FMXTee;soaprtl;DbxCommonDriver;ibxpress;Tee;DataSnapServer;xmlrtl;DataSnapNativeClient;ibxbindings;fmxobj;FireDACDSDriver;soapmidas;rtl;emsserverresource;DbxClientDriver;vclwinx;DBXSybaseASADriver;CustomIPTransport;vcldsnap;bindcomp;appanalytics;DBXInformixDriver;IndyIPClient;bindcompvcl;GridSystem;TeeUI;dbxcds;VclSmp;adortl;FireDACODBCDriver;DataSnapIndy10ServerTransport;DataSnapProviderClient;dsnapxml;dbrtl;FireDACMongoDBDriver;IndyProtocols;inetdbxpress;fmxase;$(DCC_UsePackage)</DCC_UsePackage>
@@ -145,6 +146,11 @@
             <Form>PageAbrirCaixa</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="src\view\componente\acpdv.view.componente.litatipopgfechamento.pas">
+            <Form>ComponentListaFechamentoCaixa</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
         <DCCReference Include="src\model\acpdv.model.enum.pas"/>
         <DCCReference Include="src\utils\acpdv.utils.pas"/>
         <DCCReference Include="src\utils\acpdv.utils.keyevent.pas"/>
@@ -154,6 +160,7 @@
         <DCCReference Include="src\utils\impl\acpdv.utils.forms.impl.forms.pas"/>
         <DCCReference Include="src\view\acpdv.view.page.pagamento.pas">
             <Form>PagePagamento</Form>
+            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="src\view\acpdv.view.loginsupervisor.pas">
             <Form>PagePermissaoSupervisor</Form>
@@ -176,6 +183,7 @@
         </DCCReference>
         <DCCReference Include="src\model\dao\acpdv.model.dao.interfaces.pas"/>
         <DCCReference Include="src\model\conexao\acpdv.model.conexao.configuracao.pas"/>
+        <DCCReference Include="src\model\entidades\acpdv.model.dao.entidade.adquirente.pas"/>
         <DCCReference Include="src\model\dao\acpdv.model.dao.adquirente.pas"/>
         <DCCReference Include="src\model\acpdv.model.fechamentocaixa.pas"/>
         <DCCReference Include="src\model\entidades\acpdv.Model.Entidade.CAIXA.pas"/>
@@ -243,17 +251,12 @@
         <DCCReference Include="src\model\acpdv.model.caixa.pas"/>
         <DCCReference Include="src\model\core\acpdv.model.core.entityoperador.pas">
             <Form>EntityOperador</Form>
+            <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
-        <DCCReference Include="src\controller\acpdv.controller.pas"/>
-        <DCCReference Include="src\view\componente\acpdv.view.componente.listatipopgfechamento.pas">
-            <Form>ComponentListaFechamentoCaixa</Form>
-            <FormType>dfm</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="src\model\entidades\acpdv.model.entidade.adquirente.pas"/>
-        <DCCReference Include="src\model\core\acpdv.model.core.EntityCaixa.pas"/>
-        <DCCReference Include="src\model\core\acpdv.model.core.EntityProduto.pas"/>
+        <DCCReference Include="src\cotroller\acpdv.controller.pas"/>
+        <DCCReference Include="src\model\core\acpdv.model.core.entitycaixa.pas"/>
+        <DCCReference Include="src\model\core\acpdv.model.core.entityproduto.pas"/>
         <RcItem Include="assert\alerta.png">
             <ResourceType>RCDATA</ResourceType>
             <ResourceId>alerta</ResourceId>
@@ -262,7 +265,7 @@
             <ResourceType>RCDATA</ResourceType>
             <ResourceId>erro</ResourceId>
         </RcItem>
-        <RcItem Include="assert\informacao.png">
+        <RcItem Include="assert\informacoes.png">
             <ResourceType>RCDATA</ResourceType>
             <ResourceId>informacao</ResourceId>
         </RcItem>
@@ -304,7 +307,7 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="assert\informacao.png" Configuration="Debug" Class="ProjectFile">
+                <DeployFile LocalName="assert\informacoes.png" Configuration="Debug" Class="ProjectFile">
                     <Platform Name="Win32">
                         <RemoteDir>.\</RemoteDir>
                         <Overwrite>true</Overwrite>
@@ -1091,6 +1094,7 @@
                 <Platform value="Win32">True</Platform>
                 <Platform value="Win64">False</Platform>
             </Platforms>
+            <ModelSupport>False</ModelSupport>
         </BorlandProject>
         <ProjectFileVersion>12</ProjectFileVersion>
     </ProjectExtensions>

@@ -90,9 +90,7 @@ begin
   Result := Self;
   FDConnection.StartTransaction;
   try
-    FDQuery.Close;
-    FDQuery.SQL.Clear;
-    FDQuery.SQL.Add(FSQL);
+    FDQuery.Prepare;
     FDQuery.ExecSQL;
     FDConnection.Commit;
   except
@@ -109,8 +107,6 @@ end;
 function TConexao.Open: TConexao;
 begin
   Result := Self;
-  FDQuery.SQL.Clear;
-  FDQuery.SQL.Add(FSQL);
   FDQuery.Open;
 end;
 
@@ -131,7 +127,9 @@ end;
 function TConexao.SQL(Value: String): TConexao;
 begin
   Result := Self;
-  FSQL := Value;
+  FDQuery.Close;
+  FDQuery.SQL.Clear;
+  FDQuery.SQL.Add(Value);
 end;
 
 end.

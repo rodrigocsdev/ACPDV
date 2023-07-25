@@ -14,6 +14,7 @@ uses
   acpdv.view.page.importarcliente in 'src\view\acpdv.view.page.importarcliente.pas' {PageImportarCliente},
   acpdv.view.page.fechamentocaixa in 'src\view\acpdv.view.page.fechamentocaixa.pas' {PageFechamentoCaixa},
   acpdv.view.abrircaixa in 'src\view\acpdv.view.abrircaixa.pas' {PageAbrirCaixa},
+  acpdv.view.componente.litatipopgfechamento in 'src\view\componente\acpdv.view.componente.litatipopgfechamento.pas' {ComponentListaFechamentoCaixa: TFrame},
   acpdv.model.enum in 'src\model\acpdv.model.enum.pas',
   acpdv.utils in 'src\utils\acpdv.utils.pas',
   acpdv.utils.keyevent in 'src\utils\acpdv.utils.keyevent.pas',
@@ -29,6 +30,7 @@ uses
   acpdv.model.conexao in 'src\model\conexao\acpdv.model.conexao.pas' {Conexao: TDataModule},
   acpdv.model.dao.interfaces in 'src\model\dao\acpdv.model.dao.interfaces.pas',
   acpdv.model.conexao.configuracao in 'src\model\conexao\acpdv.model.conexao.configuracao.pas',
+  acpdv.model.dao.entidade.adquirente in 'src\model\entidades\acpdv.model.dao.entidade.adquirente.pas',
   acpdv.model.dao.adquirente in 'src\model\dao\acpdv.model.dao.adquirente.pas',
   acpdv.model.fechamentocaixa in 'src\model\acpdv.model.fechamentocaixa.pas',
   acpdv.Model.Entidade.CAIXA in 'src\model\entidades\acpdv.Model.Entidade.CAIXA.pas',
@@ -95,19 +97,16 @@ uses
   acpdv.Model.dao.unidade in 'src\model\dao\acpdv.Model.dao.unidade.pas',
   acpdv.model.caixa in 'src\model\acpdv.model.caixa.pas',
   acpdv.model.core.entityoperador in 'src\model\core\acpdv.model.core.entityoperador.pas' {EntityOperador: TDataModule},
-  acpdv.controller in 'src\controller\acpdv.controller.pas',
-  acpdv.view.componente.listatipopgfechamento in 'src\view\componente\acpdv.view.componente.listatipopgfechamento.pas' {ComponentListaFechamentoCaixa: TFrame},
-  acpdv.model.entidade.adquirente in 'src\model\entidades\acpdv.model.entidade.adquirente.pas',
-  acpdv.model.core.EntityCaixa in 'src\model\core\acpdv.model.core.EntityCaixa.pas',
-  acpdv.model.core.EntityProduto in 'src\model\core\acpdv.model.core.EntityProduto.pas';
+  acpdv.controller in 'src\cotroller\acpdv.controller.pas',
+  acpdv.model.core.entitycaixa in 'src\model\core\acpdv.model.core.entitycaixa.pas',
+  acpdv.model.core.entityproduto in 'src\model\core\acpdv.model.core.entityproduto.pas';
 
 {$R *.res}
 
 begin
- Application.Initialize;
- // ReportMemoryLeaksOnShutdown := True;   // esta ação mostra se tem memoryleak no projeto, se tem vazamento de memoria, ou seja, objetos que precisam ser destruidos
- Application.MainFormOnTaskbar := True;
- Application.CreateForm(Tpageprincipal, pageprincipal);
+  Application.Initialize;
+//  ReportMemoryLeaksOnShutdown := True;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(Tpageprincipal, pageprincipal);
   Application.Run;
-
 end.
