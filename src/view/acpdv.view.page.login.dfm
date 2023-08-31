@@ -11,10 +11,9 @@ object PageLogin: TPageLogin
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
   OnClose = FormClose
   OnCreate = FormCreate
-  PixelsPerInch = 96
+  OnShow = FormShow
   TextHeight = 13
   object pnlContainer: TPanel
     Left = 0

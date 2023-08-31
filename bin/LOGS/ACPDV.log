@@ -14,3 +14,19 @@
 [Component Visual.] edtProduto
 ----------------------------------------------------------------------
 
+[Data/Hora........] 30/08/2023 22:53:45
+[Mensagem.........] A component named FramePix already exists
+[Classe Exceção...] EComponentError
+[Formulário.......] pageprincipal
+[Unit.............] Vcl.StdCtrls
+[Component Visual.] edtProduto
+----------------------------------------------------------------------
+
+[Data/Hora........] 30/08/2023 22:53:49
+[Mensagem.........] A component named FrameCartao already exists
+[Classe Exceção...] EComponentError
+[Formulário.......] pageprincipal
+[Unit.............] Vcl.StdCtrls
+[Component Visual.] edtProduto
+----------------------------------------------------------------------
+
