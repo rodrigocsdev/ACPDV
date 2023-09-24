@@ -97,9 +97,11 @@ uses
   acpdv.Model.dao.unidade in 'src\model\dao\acpdv.Model.dao.unidade.pas',
   acpdv.model.caixa in 'src\model\acpdv.model.caixa.pas',
   acpdv.model.core.entityoperador in 'src\model\core\acpdv.model.core.entityoperador.pas' {EntityOperador: TDataModule},
-  acpdv.controller in 'src\cotroller\acpdv.controller.pas',
+  acpdv.controller in 'src\controller\acpdv.controller.pas',
   acpdv.model.core.entitycaixa in 'src\model\core\acpdv.model.core.entitycaixa.pas',
-  acpdv.model.core.entityproduto in 'src\model\core\acpdv.model.core.entityproduto.pas';
+  acpdv.model.core.entityproduto in 'src\model\core\acpdv.model.core.entityproduto.pas',
+  acpdv.model.core.entityvendas in 'src\model\core\acpdv.model.core.entityvendas.pas',
+  acpdv.model.dtos in 'src\model\dto\acpdv.model.dtos.pas';
 
 {$R *.res}
 

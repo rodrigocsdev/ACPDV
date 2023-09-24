@@ -18,6 +18,10 @@ type
 
 implementation
 
+uses
+  System.Variants,
+  acpdv.Model.dao.Ibpt;
+
 { TEntityProduto }
 
 function TEntityProduto.GetProdutoById(Id: String;
@@ -29,6 +33,15 @@ begin
   Result := False;
 
   lDataSet := TDAOProduto.New.ListarPorId(Id).DataSet;
+
+  var lDataSetIBPT := TDAOIbpt.New.Listar.DataSet;
+
+  lDataSetIBPT.Locate('ID;EXTIPI', VarArrayOf([lDataSet.FieldByName('NCM').AsString,
+                                      lDataSet.FieldByName('EXTIPI').AsString]),[]);
+
+  for var J := 0 to Pred(lDataSetIBPT.FieldCount) do
+     Dados.AddOrSetValue(lDataSetIBPT.fields[J].FieldName+'_PRODUTO',
+     lDataSetIBPT.Fields[J].AsVariant);
 
   if not lDataSet.IsEmpty then
   begin

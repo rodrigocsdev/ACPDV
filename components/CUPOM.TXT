@@ -1,0 +1,28 @@
+                EMPRESA DE TESTE                
+RUA DE TESTE
+Cidade: Campina Grande
+Bairro: Centro
+Telefone: (83) 8888-8888 CNPJ: 00.000.000/0001-00
+================================================
+                   MESA: 001                   
+Data: 20/06/2023 Hora: 14:43:26
+Comanda: 0000000370
+================================================
+Cód.  Descricao                Unit  Qtde Valor
+================================================
+00002 PRODUTO DE TESTE           5,00 1,00 5,00
+00003 TESTE                      10,00 1,00 10,00
+
+Total: R$ 15,00
+================================================
+Vendedor: Magnaldo Araújo de Melo
+     !!!FAZEMOS O MELHOR PENSANDO EM VOCE!!!
+     AQUI NAO SE FAZ CLIENTES, FAZEMOS AMIGOS
+             OBRIGADO E VOLTE SEMPRE!
+
+
+
+
+
+
+

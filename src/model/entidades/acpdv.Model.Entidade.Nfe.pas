@@ -40,9 +40,9 @@ type
     FDhrecbto :TDateTime;
     FNprot :String;
     FProtocolo :Integer;
-    FObservacao :Integer;
-    FXml :Integer;
-    FXmlCancelamento :Integer;
+    FObservacao :String;
+    FXml :String;
+    FXmlCancelamento :String;
     FSatNumeroCfe :Integer;
     FSatNumeroSerie :Integer;
     FIdCaixaMovimento :Integer;
@@ -121,12 +121,12 @@ type
     function SetNprot(const Value :String): TNfe;
     function GetProtocolo :Integer;
     function SetProtocolo(const Value :Integer): TNfe;
-    function GetObservacao :Integer;
-    function SetObservacao(const Value :Integer): TNfe;
-    function GetXml :Integer;
-    function SetXml(const Value :Integer): TNfe;
-    function GetXmlCancelamento :Integer;
-    function SetXmlCancelamento(const Value :Integer): TNfe;
+    function GetObservacao :String;
+    function SetObservacao(const Value :String): TNfe;
+    function GetXml :String;
+    function SetXml(const Value :String): TNfe;
+    function GetXmlCancelamento :String;
+    function SetXmlCancelamento(const Value :String): TNfe;
     function GetSatNumeroCfe :Integer;
     function SetSatNumeroCfe(const Value :Integer): TNfe;
     function GetSatNumeroSerie :Integer;
@@ -152,6 +152,7 @@ end;
 
 function TNfe.SetSerie(const Value :Integer): TNfe;
 begin
+  Result := Self;
   FSerie := Value;
 end;
 
@@ -162,6 +163,7 @@ end;
 
 function TNfe.SetNumero(const Value :Integer): TNfe;
 begin
+  Result := Self;
   FNumero := Value;
 end;
 
@@ -172,6 +174,7 @@ end;
 
 function TNfe.SetIdEmpresa(const Value :Integer): TNfe;
 begin
+  Result := Self;
   FIdEmpresa := Value;
 end;
 
@@ -182,6 +185,7 @@ end;
 
 function TNfe.SetSituacao(const Value :String): TNfe;
 begin
+  Result := Self;
   FSituacao := Value;
 end;
 
@@ -192,6 +196,7 @@ end;
 
 function TNfe.SetChaveAcesso(const Value :String): TNfe;
 begin
+  Result := Self;
   FChaveAcesso := Value;
 end;
 
@@ -202,6 +207,7 @@ end;
 
 function TNfe.SetDtEmissao(const Value :TDateTime): TNfe;
 begin
+  Result := Self;
   FDtEmissao := Value;
 end;
 
@@ -212,6 +218,7 @@ end;
 
 function TNfe.SetDthrSaida(const Value :TDateTime): TNfe;
 begin
+  Result := Self;
   FDthrSaida := Value;
 end;
 
@@ -222,6 +229,7 @@ end;
 
 function TNfe.SetTipoNfe(const Value :Integer): TNfe;
 begin
+  Result := Self;
   FTipoNfe := Value;
 end;
 
@@ -232,6 +240,7 @@ end;
 
 function TNfe.SetTipoEmissao(const Value :Integer): TNfe;
 begin
+  Result := Self;
   FTipoEmissao := Value;
 end;
 
@@ -242,6 +251,7 @@ end;
 
 function TNfe.SetIdPessoa(const Value :Integer): TNfe;
 begin
+  Result := Self;
   FIdPessoa := Value;
 end;
 
@@ -252,6 +262,7 @@ end;
 
 function TNfe.SetDestNome(const Value :String): TNfe;
 begin
+  Result := Self;
   FDestNome := Value;
 end;
 
@@ -262,6 +273,7 @@ end;
 
 function TNfe.SetDestCnpjCpf(const Value :String): TNfe;
 begin
+  Result := Self;
   FDestCnpjCpf := Value;
 end;
 
@@ -272,6 +284,7 @@ end;
 
 function TNfe.SetDestFone(const Value :String): TNfe;
 begin
+  Result := Self;
   FDestFone := Value;
 end;
 
@@ -282,6 +295,7 @@ end;
 
 function TNfe.SetDestEndereco(const Value :String): TNfe;
 begin
+  Result := Self;
   FDestEndereco := Value;
 end;
 
@@ -292,6 +306,7 @@ end;
 
 function TNfe.SetDestNumero(const Value :String): TNfe;
 begin
+  Result := Self;
   FDestNumero := Value;
 end;
 
@@ -302,6 +317,7 @@ end;
 
 function TNfe.SetDestComplemento(const Value :String): TNfe;
 begin
+  Result := Self;
   FDestComplemento := Value;
 end;
 
@@ -312,6 +328,7 @@ end;
 
 function TNfe.SetDestBairro(const Value :String): TNfe;
 begin
+  Result := Self;
   FDestBairro := Value;
 end;
 
@@ -322,6 +339,7 @@ end;
 
 function TNfe.SetDestCidade(const Value :Integer): TNfe;
 begin
+  Result := Self;
   FDestCidade := Value;
 end;
 
@@ -332,6 +350,7 @@ end;
 
 function TNfe.SetDestCidadeDescricao(const Value :String): TNfe;
 begin
+  Result := Self;
   FDestCidadeDescricao := Value;
 end;
 
@@ -342,6 +361,7 @@ end;
 
 function TNfe.SetDestUf(const Value :String): TNfe;
 begin
+  Result := Self;
   FDestUf := Value;
 end;
 
@@ -352,6 +372,7 @@ end;
 
 function TNfe.SetDestCep(const Value :String): TNfe;
 begin
+  Result := Self;
   FDestCep := Value;
 end;
 
@@ -362,6 +383,7 @@ end;
 
 function TNfe.SetVlBaseIcms(const Value :Currency): TNfe;
 begin
+  Result := Self;
   FVlBaseIcms := Value;
 end;
 
@@ -372,6 +394,7 @@ end;
 
 function TNfe.SetVlIcms(const Value :Currency): TNfe;
 begin
+  Result := Self;
   FVlIcms := Value;
 end;
 
@@ -382,6 +405,7 @@ end;
 
 function TNfe.SetVlDesconto(const Value :Currency): TNfe;
 begin
+  Result := Self;
   FVlDesconto := Value;
 end;
 
@@ -392,6 +416,7 @@ end;
 
 function TNfe.SetVlProdutos(const Value :Currency): TNfe;
 begin
+  Result := Self;
   FVlProdutos := Value;
 end;
 
@@ -402,6 +427,7 @@ end;
 
 function TNfe.SetVlOutras(const Value :Currency): TNfe;
 begin
+  Result := Self;
   FVlOutras := Value;
 end;
 
@@ -412,6 +438,7 @@ end;
 
 function TNfe.SetVlTotalNf(const Value :Currency): TNfe;
 begin
+  Result := Self;
   FVlTotalNf := Value;
 end;
 
@@ -422,6 +449,7 @@ end;
 
 function TNfe.SetVlPis(const Value :Currency): TNfe;
 begin
+  Result := Self;
   FVlPis := Value;
 end;
 
@@ -432,6 +460,7 @@ end;
 
 function TNfe.SetVlCofins(const Value :Currency): TNfe;
 begin
+  Result := Self;
   FVlCofins := Value;
 end;
 
@@ -442,6 +471,7 @@ end;
 
 function TNfe.SetVlTroco(const Value :Currency): TNfe;
 begin
+  Result := Self;
   FVlTroco := Value;
 end;
 
@@ -452,6 +482,7 @@ end;
 
 function TNfe.SetCstat(const Value :Integer): TNfe;
 begin
+  Result := Self;
   FCstat := Value;
 end;
 
@@ -462,6 +493,7 @@ end;
 
 function TNfe.SetXmotivo(const Value :String): TNfe;
 begin
+  Result := Self;
   FXmotivo := Value;
 end;
 
@@ -472,6 +504,7 @@ end;
 
 function TNfe.SetDhrecbto(const Value :TDateTime): TNfe;
 begin
+  Result := Self;
   FDhrecbto := Value;
 end;
 
@@ -482,6 +515,7 @@ end;
 
 function TNfe.SetNprot(const Value :String): TNfe;
 begin
+  Result := Self;
   FNprot := Value;
 end;
 
@@ -492,6 +526,7 @@ end;
 
 function TNfe.SetProtocolo(const Value :Integer): TNfe;
 begin
+  Result := Self;
   FProtocolo := Value;
 end;
 
@@ -500,38 +535,42 @@ begin
   Result := FProtocolo;
 end;
 
-function TNfe.SetObservacao(const Value :Integer): TNfe;
+function TNfe.SetObservacao(const Value :String): TNfe;
 begin
+  Result := Self;
   FObservacao := Value;
 end;
 
-function TNfe.GetObservacao :Integer;
+function TNfe.GetObservacao : String;
 begin
   Result := FObservacao;
 end;
 
-function TNfe.SetXml(const Value :Integer): TNfe;
+function TNfe.SetXml(const Value :String): TNfe;
 begin
+  Result := Self;
   FXml := Value;
 end;
 
-function TNfe.GetXml :Integer;
+function TNfe.GetXml : String;
 begin
   Result := FXml;
 end;
 
-function TNfe.SetXmlCancelamento(const Value :Integer): TNfe;
+function TNfe.SetXmlCancelamento(const Value :String): TNfe;
 begin
+  Result := Self;
   FXmlCancelamento := Value;
 end;
 
-function TNfe.GetXmlCancelamento :Integer;
+function TNfe.GetXmlCancelamento : String;
 begin
   Result := FXmlCancelamento;
 end;
 
 function TNfe.SetSatNumeroCfe(const Value :Integer): TNfe;
 begin
+  Result := Self;
   FSatNumeroCfe := Value;
 end;
 
@@ -542,6 +581,7 @@ end;
 
 function TNfe.SetSatNumeroSerie(const Value :Integer): TNfe;
 begin
+  Result := Self;
   FSatNumeroSerie := Value;
 end;
 
@@ -552,6 +592,7 @@ end;
 
 function TNfe.SetIdCaixaMovimento(const Value :Integer): TNfe;
 begin
+  Result := Self;
   FIdCaixaMovimento := Value;
 end;
 
@@ -562,6 +603,7 @@ end;
 
 function TNfe.SetCnf(const Value :Integer): TNfe;
 begin
+  Result := Self;
   FCnf := Value;
 end;
 
@@ -572,6 +614,7 @@ end;
 
 function TNfe.SetCarroKm(const Value :Integer): TNfe;
 begin
+  Result := Self;
   FCarroKm := Value;
 end;
 
@@ -582,6 +625,7 @@ end;
 
 function TNfe.SetCarroPlaca(const Value :String): TNfe;
 begin
+  Result := Self;
   FCarroPlaca := Value;
 end;
 

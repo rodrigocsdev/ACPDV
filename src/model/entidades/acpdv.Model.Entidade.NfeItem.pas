@@ -149,6 +149,7 @@ end;
 
 function TNfeItem.SetSerie(const Value :Integer): TNfeItem;
 begin
+  Result := Self;
   FSerie := Value;
 end;
 
@@ -159,6 +160,7 @@ end;
 
 function TNfeItem.SetNumero(const Value :Integer): TNfeItem;
 begin
+  Result := Self;
   FNumero := Value;
 end;
 
@@ -169,6 +171,7 @@ end;
 
 function TNfeItem.SetItem(const Value :Integer): TNfeItem;
 begin
+  Result := Self;
   FItem := Value;
 end;
 
@@ -179,6 +182,7 @@ end;
 
 function TNfeItem.SetIdProduto(const Value :Integer): TNfeItem;
 begin
+  Result := Self;
   FIdProduto := Value;
 end;
 
@@ -189,6 +193,7 @@ end;
 
 function TNfeItem.SetGtin(const Value :String): TNfeItem;
 begin
+  Result := Self;
   FGtin := Value;
 end;
 
@@ -199,6 +204,7 @@ end;
 
 function TNfeItem.SetDescricao(const Value :String): TNfeItem;
 begin
+  Result := Self;
   FDescricao := Value;
 end;
 
@@ -209,6 +215,7 @@ end;
 
 function TNfeItem.SetCfop(const Value :Integer): TNfeItem;
 begin
+  Result := Self;
   FCfop := Value;
 end;
 
@@ -219,6 +226,7 @@ end;
 
 function TNfeItem.SetUnd(const Value :String): TNfeItem;
 begin
+  Result := Self;
   FUnd := Value;
 end;
 
@@ -229,6 +237,7 @@ end;
 
 function TNfeItem.SetQuantidade(const Value :Currency): TNfeItem;
 begin
+  Result := Self;
   FQuantidade := Value;
 end;
 
@@ -239,6 +248,7 @@ end;
 
 function TNfeItem.SetVlUnitario(const Value :Currency): TNfeItem;
 begin
+  Result := Self;
   FVlUnitario := Value;
 end;
 
@@ -249,6 +259,7 @@ end;
 
 function TNfeItem.SetVlDesconto(const Value :Currency): TNfeItem;
 begin
+  Result := Self;
   FVlDesconto := Value;
 end;
 
@@ -259,6 +270,7 @@ end;
 
 function TNfeItem.SetVlDescontoRateio(const Value :Currency): TNfeItem;
 begin
+  Result := Self;
   FVlDescontoRateio := Value;
 end;
 
@@ -269,6 +281,7 @@ end;
 
 function TNfeItem.SetVlOutros(const Value :Currency): TNfeItem;
 begin
+  Result := Self;
   FVlOutros := Value;
 end;
 
@@ -279,6 +292,7 @@ end;
 
 function TNfeItem.SetVlOutrosRateio(const Value :Currency): TNfeItem;
 begin
+  Result := Self;
   FVlOutrosRateio := Value;
 end;
 
@@ -289,6 +303,7 @@ end;
 
 function TNfeItem.SetVlProduto(const Value :Currency): TNfeItem;
 begin
+  Result := Self;
   FVlProduto := Value;
 end;
 
@@ -299,6 +314,7 @@ end;
 
 function TNfeItem.SetVlTotal(const Value :Currency): TNfeItem;
 begin
+  Result := Self;
   FVlTotal := Value;
 end;
 
@@ -309,6 +325,7 @@ end;
 
 function TNfeItem.SetOrigem(const Value :Integer): TNfeItem;
 begin
+  Result := Self;
   FOrigem := Value;
 end;
 
@@ -319,6 +336,7 @@ end;
 
 function TNfeItem.SetCst(const Value :String): TNfeItem;
 begin
+  Result := Self;
   FCst := Value;
 end;
 
@@ -329,6 +347,7 @@ end;
 
 function TNfeItem.SetNcm(const Value :String): TNfeItem;
 begin
+  Result := Self;
   FNcm := Value;
 end;
 
@@ -339,6 +358,7 @@ end;
 
 function TNfeItem.SetExtipi(const Value :String): TNfeItem;
 begin
+  Result := Self;
   FExtipi := Value;
 end;
 
@@ -349,6 +369,7 @@ end;
 
 function TNfeItem.SetSnVbase(const Value :Currency): TNfeItem;
 begin
+  Result := Self;
   FSnVbase := Value;
 end;
 
@@ -359,6 +380,7 @@ end;
 
 function TNfeItem.SetSnAliqcredito(const Value :Currency): TNfeItem;
 begin
+  Result := Self;
   FSnAliqcredito := Value;
 end;
 
@@ -369,6 +391,7 @@ end;
 
 function TNfeItem.SetSnVcredito(const Value :Currency): TNfeItem;
 begin
+  Result := Self;
   FSnVcredito := Value;
 end;
 
@@ -379,6 +402,7 @@ end;
 
 function TNfeItem.SetIcmsVbase(const Value :Currency): TNfeItem;
 begin
+  Result := Self;
   FIcmsVbase := Value;
 end;
 
@@ -389,6 +413,7 @@ end;
 
 function TNfeItem.SetIcmsAliquota(const Value :Currency): TNfeItem;
 begin
+  Result := Self;
   FIcmsAliquota := Value;
 end;
 
@@ -399,6 +424,7 @@ end;
 
 function TNfeItem.SetIcmsVimposto(const Value :Currency): TNfeItem;
 begin
+  Result := Self;
   FIcmsVimposto := Value;
 end;
 
@@ -409,6 +435,7 @@ end;
 
 function TNfeItem.SetPisCst(const Value :String): TNfeItem;
 begin
+  Result := Self;
   FPisCst := Value;
 end;
 
@@ -419,6 +446,7 @@ end;
 
 function TNfeItem.SetPisVbase(const Value :Currency): TNfeItem;
 begin
+  Result := Self;
   FPisVbase := Value;
 end;
 
@@ -429,6 +457,7 @@ end;
 
 function TNfeItem.SetPisAliquota(const Value :Currency): TNfeItem;
 begin
+  Result := Self;
   FPisAliquota := Value;
 end;
 
@@ -439,6 +468,7 @@ end;
 
 function TNfeItem.SetPisVimposto(const Value :Currency): TNfeItem;
 begin
+  Result := Self;
   FPisVimposto := Value;
 end;
 
@@ -449,6 +479,7 @@ end;
 
 function TNfeItem.SetCofinsCst(const Value :String): TNfeItem;
 begin
+  Result := Self;
   FCofinsCst := Value;
 end;
 
@@ -459,6 +490,7 @@ end;
 
 function TNfeItem.SetCofinsVbase(const Value :Currency): TNfeItem;
 begin
+  Result := Self;
   FCofinsVbase := Value;
 end;
 
@@ -469,6 +501,7 @@ end;
 
 function TNfeItem.SetCofinsAliquota(const Value :Currency): TNfeItem;
 begin
+  Result := Self;
   FCofinsAliquota := Value;
 end;
 
@@ -479,6 +512,7 @@ end;
 
 function TNfeItem.SetCofinsVimposto(const Value :Currency): TNfeItem;
 begin
+  Result := Self;
   FCofinsVimposto := Value;
 end;
 
@@ -489,6 +523,7 @@ end;
 
 function TNfeItem.SetInAliqFederal(const Value :Currency): TNfeItem;
 begin
+  Result := Self;
   FInAliqFederal := Value;
 end;
 
@@ -499,6 +534,7 @@ end;
 
 function TNfeItem.SetInVlFederal(const Value :Currency): TNfeItem;
 begin
+  Result := Self;
   FInVlFederal := Value;
 end;
 
@@ -509,6 +545,7 @@ end;
 
 function TNfeItem.SetInAliqEstadual(const Value :Currency): TNfeItem;
 begin
+  Result := Self;
   FInAliqEstadual := Value;
 end;
 
@@ -519,6 +556,7 @@ end;
 
 function TNfeItem.SetInVlEstadual(const Value :Currency): TNfeItem;
 begin
+  Result := Self;
   FInVlEstadual := Value;
 end;
 
@@ -529,6 +567,7 @@ end;
 
 function TNfeItem.SetInAliqMunicipal(const Value :Currency): TNfeItem;
 begin
+  Result := Self;
   FInAliqMunicipal := Value;
 end;
 
@@ -539,6 +578,7 @@ end;
 
 function TNfeItem.SetInVlMunicipal(const Value :Currency): TNfeItem;
 begin
+  Result := Self;
   FInVlMunicipal := Value;
 end;
 
@@ -549,6 +589,7 @@ end;
 
 function TNfeItem.SetInfAdicional(const Value :String): TNfeItem;
 begin
+  Result := Self;
   FInfAdicional := Value;
 end;
 
@@ -559,6 +600,7 @@ end;
 
 function TNfeItem.SetCest(const Value :String): TNfeItem;
 begin
+  Result := Self;
   FCest := Value;
 end;
 
@@ -569,6 +611,7 @@ end;
 
 function TNfeItem.SetIdCodigoAnp(const Value :Integer): TNfeItem;
 begin
+  Result := Self;
   FIdCodigoAnp := Value;
 end;
 

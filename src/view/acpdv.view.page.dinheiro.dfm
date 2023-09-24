@@ -29,7 +29,7 @@ object FrameDinheiro: TFrameDinheiro
         Left = 0
         Top = 0
         Width = 236
-        Height = 44
+        Height = 40
         Align = alLeft
         Caption = 'Total Recebido: '
         Font.Charset = DEFAULT_CHARSET
@@ -38,7 +38,6 @@ object FrameDinheiro: TFrameDinheiro
         Font.Name = 'Tahoma'
         Font.Style = []
         ParentFont = False
-        ExplicitHeight = 40
       end
       object edtRecebido: TEdit
         Left = 236

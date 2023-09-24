@@ -5,7 +5,7 @@ interface
 uses
   acpdv.model.core.entityoperador,
   acpdv.model.core.entitycaixa,
-  acpdv.model.core.entityproduto;
+  acpdv.model.core.entityproduto, acpdv.model.core.entityvendas;
 
 type
   TController = class
@@ -13,6 +13,7 @@ type
     FOperador: TEntityOperador;
     FCaixa: TEntityCaixa;
     FProduto: TEntityProduto;
+    FVenda: TEntityVendas;
   public
     constructor Create;
     destructor Destroy; override;
@@ -20,6 +21,7 @@ type
     function Operador: TEntityOperador;
     function Caixa: TEntityCaixa;
     function Produto: TEntityProduto;
+    function Venda: TEntityVendas;
   end;
 
 implementation
@@ -61,6 +63,13 @@ begin
   if not Assigned(FProduto) then
     FProduto := TEntityProduto.New;
   Result := FProduto;
+end;
+
+function TController.Venda: TEntityVendas;
+begin
+  if not Assigned(FVenda) then
+    FVenda := TEntityVendas.New;
+  Result := FVenda;
 end;
 
 end.

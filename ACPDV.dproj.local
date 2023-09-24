@@ -111,9 +111,9 @@
     <Transaction>2023/04/24 21:48:27.000.000,=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.Model.dao.Cidade.pas</Transaction>
     <Transaction>2023/04/24 21:48:27.000.478,=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.Model.dao.Cstipi.pas</Transaction>
     <Transaction>2023/04/24 21:48:27.000.242,=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.Model.dao.crt.pas</Transaction>
-    <Transaction>2023/04/24 21:48:28.000.944,=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.Model.dao.turno.pas</Transaction>
-    <Transaction>2023/04/24 21:48:28.000.785,=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.Model.dao.produto.pas</Transaction>
     <Transaction>2023/04/24 21:48:28.000.371,=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.Model.dao.NfePagamento.pas</Transaction>
+    <Transaction>2023/04/24 21:48:28.000.785,=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.Model.dao.produto.pas</Transaction>
+    <Transaction>2023/04/24 21:48:28.000.944,=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.Model.dao.turno.pas</Transaction>
     <Transaction>2023/04/24 21:48:28.000.114,=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.Model.dao.NfeEvento.pas</Transaction>
     <Transaction>2023/04/24 21:48:28.000.864,=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.Model.dao.SuprimentoSangria.pas</Transaction>
     <Transaction>2023/04/24 21:48:28.000.541,=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.Model.dao.Origem.pas</Transaction>
@@ -186,8 +186,8 @@
     <Transaction>2023/04/25 19:06:52.000.464,=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.Model.dao.Operador.pas</Transaction>
     <Transaction>2023/04/25 19:06:52.000.919,=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.Model.dao.unidade.pas</Transaction>
     <Transaction>2023/04/25 19:06:52.000.136,=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.Model.dao.MfePagamento.pas</Transaction>
-    <Transaction>2023/04/25 19:06:52.000.409,=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.Model.dao.NfePagamento.pas</Transaction>
     <Transaction>2023/04/25 19:06:52.000.802,=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.Model.dao.turno.pas</Transaction>
+    <Transaction>2023/04/25 19:06:52.000.409,=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.Model.dao.NfePagamento.pas</Transaction>
     <Transaction>2023/04/25 19:06:52.000.744,=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.Model.dao.SuprimentoSangria.pas</Transaction>
     <Transaction>2023/04/25 19:06:52.000.629,=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\dao\acpdv.Model.dao.pos.pas</Transaction>
     <Transaction>2023/05/09 08:40:04.000.977,=C:\Users\Rodrigo.Carvalho\GitHub\acpdv\src\model\core\acpdv.model.core.EntityOperador.pas</Transaction>
@@ -206,8 +206,8 @@
     <File Path="assert\erro.png"/>
     <File Path="assert\informacoes.png"/>
     <File Path="src"/>
-    <File Path="src\cotroller"/>
-    <File Path="src\cotroller\acpdv.controller.pas"/>
+    <File Path="src\controller"/>
+    <File Path="src\controller\acpdv.controller.pas"/>
     <File Path="src\model"/>
     <File Path="src\model\conexao"/>
     <File Path="src\model\conexao\acpdv.model.conexao.configuracao.pas"/>
@@ -218,6 +218,7 @@
     <File Path="src\model\core\acpdv.model.core.entityoperador.dfm"/>
     <File Path="src\model\core\acpdv.model.core.entitycaixa.pas"/>
     <File Path="src\model\core\acpdv.model.core.entityproduto.pas"/>
+    <File Path="src\model\core\acpdv.model.core.entityvendas.pas"/>
     <File Path="src\model\dao"/>
     <File Path="src\model\dao\acpdv.model.dao.interfaces.pas"/>
     <File Path="src\model\dao\acpdv.model.dao.adquirente.pas"/>
@@ -252,6 +253,8 @@
     <File Path="src\model\dao\acpdv.Model.dao.turno.pas"/>
     <File Path="src\model\dao\acpdv.Model.dao.UF.pas"/>
     <File Path="src\model\dao\acpdv.Model.dao.unidade.pas"/>
+    <File Path="src\model\dto"/>
+    <File Path="src\model\dto\acpdv.model.dtos.pas"/>
     <File Path="src\model\entidades"/>
     <File Path="src\model\entidades\acpdv.Model.Entidade.CAIXA.pas"/>
     <File Path="src\model\entidades\acpdv.Model.Entidade.caixamovimento.pas"/>

@@ -93,7 +93,7 @@ begin
 end;
  procedure TPageLogin.FormShow(Sender: TObject);
 begin
-     edtUsuario.SetFocus;
+    edtUsuario.SetFocus;
 end;
 function TPageLogin.Informacao(Value: TProc<String>): TPageLogin;
 begin

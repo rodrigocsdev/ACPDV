@@ -16,6 +16,7 @@ object PagePagamento: TPagePagamento
   Font.Style = []
   KeyPreview = True
   OldCreateOrder = False
+  OnCreate = FormCreate
   OnKeyDown = FormKeyDown
   OnResize = FormResize
   OnShow = FormShow
@@ -526,14 +527,14 @@ object PagePagamento: TPagePagamento
               ParentFont = False
               ExplicitHeight = 19
             end
-            object Label3: TLabel
+            object lblTotalVenda: TLabel
               Left = 113
               Top = 0
               Width = 114
               Height = 20
               Align = alClient
               Alignment = taRightJustify
-              Caption = '0.00'
+              Caption = '0,00'
               Font.Charset = DEFAULT_CHARSET
               Font.Color = clWhite
               Font.Height = -16
@@ -591,7 +592,7 @@ object PagePagamento: TPagePagamento
               Font.Style = []
               ParentFont = False
               TabOrder = 0
-              Text = '0.00'
+              Text = '0,00'
             end
           end
           object Panel7: TPanel
@@ -619,7 +620,7 @@ object PagePagamento: TPagePagamento
               ParentFont = False
               ExplicitHeight = 19
             end
-            object Edit1: TEdit
+            object edtAcrecimo: TEdit
               AlignWithMargins = True
               Left = 79
               Top = 0
@@ -640,7 +641,7 @@ object PagePagamento: TPagePagamento
               Font.Style = []
               ParentFont = False
               TabOrder = 0
-              Text = '0.00'
+              Text = '0,00'
             end
           end
           object Panel8: TPanel
@@ -668,14 +669,14 @@ object PagePagamento: TPagePagamento
               ParentFont = False
               ExplicitHeight = 19
             end
-            object Label7: TLabel
+            object lblReceber: TLabel
               Left = 116
               Top = 0
               Width = 111
               Height = 20
               Align = alClient
               Alignment = taRightJustify
-              Caption = '0.00'
+              Caption = '0,00'
               Font.Charset = DEFAULT_CHARSET
               Font.Color = clWhite
               Font.Height = -16
@@ -721,7 +722,7 @@ object PagePagamento: TPagePagamento
               ParentFont = False
               ExplicitHeight = 19
             end
-            object Edit2: TEdit
+            object edtRecebido: TEdit
               AlignWithMargins = True
               Left = 111
               Top = 0
@@ -742,7 +743,8 @@ object PagePagamento: TPagePagamento
               Font.Style = []
               ParentFont = False
               TabOrder = 0
-              Text = '0.00'
+              Text = '0,00'
+              OnChange = edtRecebidoChange
             end
           end
           object Panel11: TPanel
@@ -770,14 +772,14 @@ object PagePagamento: TPagePagamento
               ParentFont = False
               ExplicitHeight = 19
             end
-            object Label10: TLabel
+            object lblRestante: TLabel
               Left = 110
               Top = 0
               Width = 117
               Height = 20
               Align = alClient
               Alignment = taRightJustify
-              Caption = '0.00'
+              Caption = '0,00'
               Font.Charset = DEFAULT_CHARSET
               Font.Color = clWhite
               Font.Height = -16
@@ -814,14 +816,14 @@ object PagePagamento: TPagePagamento
               ParentFont = False
               ExplicitHeight = 19
             end
-            object Label12: TLabel
+            object lblTroco: TLabel
               Left = 47
               Top = 0
               Width = 180
               Height = 20
               Align = alClient
               Alignment = taRightJustify
-              Caption = '0.00'
+              Caption = '0,00'
               Font.Charset = DEFAULT_CHARSET
               Font.Color = clWhite
               Font.Height = -16
@@ -835,11 +837,12 @@ object PagePagamento: TPagePagamento
           end
         end
       end
-      object Panel2: TPanel
+      object pnlPagamento: TPanel
         Left = 20
         Top = 459
         Width = 233
         Height = 41
+        Cursor = crHandPoint
         Align = alBottom
         BevelOuter = bvNone
         Caption = 'Cancelar e Retornar'
@@ -850,6 +853,7 @@ object PagePagamento: TPagePagamento
         Font.Style = []
         ParentFont = False
         TabOrder = 2
+        OnClick = pnlPagamentoClick
       end
     end
     object pnlFormasPagamento: TPanel
@@ -993,9 +997,11 @@ object PagePagamento: TPagePagamento
                 Top = 0
                 Width = 150
                 Height = 41
+                Cursor = crHandPoint
                 Align = alTop
                 BevelOuter = bvNone
                 TabOrder = 0
+                OnClick = pnlCartaoAcaoClick
                 object Image2: TImage
                   AlignWithMargins = True
                   Left = 50
@@ -1346,9 +1352,11 @@ object PagePagamento: TPagePagamento
                 Top = 0
                 Width = 150
                 Height = 41
+                Cursor = crHandPoint
                 Align = alTop
                 BevelOuter = bvNone
                 TabOrder = 0
+                OnClick = pnlPixAcaoClick
                 object Image3: TImage
                   AlignWithMargins = True
                   Left = 50
@@ -1598,9 +1606,13 @@ object PagePagamento: TPagePagamento
                 Top = 0
                 Width = 150
                 Height = 41
+                Cursor = crHandPoint
                 Align = alTop
                 BevelOuter = bvNone
                 TabOrder = 0
+                OnClick = pnlDinheiroAcaoClick
+                ExplicitLeft = 3
+                ExplicitTop = -4
                 object Image4: TImage
                   AlignWithMargins = True
                   Left = 50

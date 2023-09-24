@@ -183,12 +183,30 @@ object PageFechamentoCaixa: TPageFechamentoCaixa
             Padding.Right = 10
             Padding.Bottom = 10
             TabOrder = 1
-            object Edit1: TEdit
+            object Label1: TLabel
               Left = 10
               Top = 17
-              Width = 229
+              Width = 179
               Height = 34
               Align = alClient
+              Alignment = taRightJustify
+              Caption = 'R$ '
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -20
+              Font.Name = 'Tahoma'
+              Font.Style = []
+              ParentFont = False
+              ExplicitLeft = 115
+              ExplicitWidth = 29
+              ExplicitHeight = 24
+            end
+            object edtValor: TEdit
+              Left = 189
+              Top = 17
+              Width = 50
+              Height = 34
+              Align = alRight
               Alignment = taRightJustify
               BorderStyle = bsNone
               Font.Charset = DEFAULT_CHARSET
@@ -199,7 +217,9 @@ object PageFechamentoCaixa: TPageFechamentoCaixa
               ParentColor = True
               ParentFont = False
               TabOrder = 0
-              Text = 'R$ 0,00'
+              Text = '0,00'
+              OnChange = edtValorChange
+              ExplicitLeft = 190
             end
           end
         end

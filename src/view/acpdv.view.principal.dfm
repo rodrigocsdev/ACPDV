@@ -96,7 +96,7 @@ object pageprincipal: Tpageprincipal
             ExplicitWidth = 65
             ExplicitHeight = 65
           end
-          object btnCancelarOp: TSpeedButton
+          object btnAbrirVenda: TSpeedButton
             Left = 0
             Top = 0
             Width = 190

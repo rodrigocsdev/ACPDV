@@ -20,9 +20,10 @@ type
   public
     constructor Create;
     destructor Destroy; override;
-    class function New: iDAO<TConfiguracao>;
+    class function New: TDAOConfiguracao;
     function Listar: iDAO<TConfiguracao>;
     function ListarPorId(Id: Variant): iDAO<TConfiguracao>;
+    function FindWhere(const Campo: String; const Value: Variant): TDAOConfiguracao;
     function Excluir(aId: Variant): iDAO<TConfiguracao>; overload;
     function Excluir: iDAO<TConfiguracao>; overload;
     function Atualizar: iDAO<TConfiguracao>;
@@ -50,7 +51,7 @@ begin
   inherited;
 end;
 
-class function TDAOConfiguracao.New: iDAO<TConfiguracao>;
+class function TDAOConfiguracao.New: TDAOConfiguracao;
 begin
   Result := Self.Create;
 end;
@@ -201,6 +202,16 @@ begin
   Result := Self;
   FConexao.SQL('Delete from Configuracao where numero_caixa=?')
     .Params(0, FConfiguracao.GetNumeroCaixa).ExecSQL;
+end;
+
+function TDAOConfiguracao.FindWhere(const Campo: String;
+  const Value: Variant): TDAOConfiguracao;
+begin
+  Result := Self;
+
+  var lSQL: Variant := Format('select * from Configuracao where %s=?',[Campo]);
+
+  FDataSet := FConexao.Query(lSQL,[Value]);
 end;
 
 function TDAOConfiguracao.Atualizar: iDAO<TConfiguracao>;

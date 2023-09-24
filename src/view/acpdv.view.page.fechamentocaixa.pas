@@ -32,7 +32,7 @@ type
     Panel7: TPanel;
     ComboBox1: TComboBox;
     Panel8: TPanel;
-    Edit1: TEdit;
+    edtValor: TEdit;
     Panel9: TPanel;
     Panel10: TPanel;
     Panel11: TPanel;
@@ -42,6 +42,7 @@ type
     SpeedButton3: TSpeedButton;
     Panel12: TPanel;
     ListBox1: TListBox;
+    Label1: TLabel;
     procedure FormShow(Sender: TObject);
     procedure FormResize(Sender: TObject);
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
@@ -49,6 +50,7 @@ type
     procedure SpeedButton1Click(Sender: TObject);
     procedure SpeedButton3Click(Sender: TObject);
     procedure SpeedButton2Click(Sender: TObject);
+    procedure edtValorChange(Sender: TObject);
   private
     FController: TController;
     FProc : TProc<Boolean>;
@@ -68,6 +70,11 @@ implementation
 
 {$R *.dfm}
 { TForm1 }
+
+procedure TPageFechamentoCaixa.edtValorChange(Sender: TObject);
+begin
+  edtValor.Width := edtValor.Width + Length(edtValor.Text);
+end;
 
 function TPageFechamentoCaixa.Embed(Value: TWinControl): TPageFechamentoCaixa;
 begin
@@ -139,13 +146,13 @@ begin
   inc(FIndex);
   FLista := TComponentListaFechamentoCaixa.New(Self)
     .TipoPagamento(ComboBox1.Text)
-    .Valor(Edit1.Text)
+    .Valor(edtValor.Text)
     .Embed(ListBox1)
     .Nome('Frame' + FIndex.ToString)
     .Click(RemoveIntemLista)
     .Alinhamento(alTop);
 
-  FFechamento.AddOrSetValue(ComboBox1.Text,StringReplace(Edit1.Text,'R$','',[rfReplaceAll]));
+  FFechamento.AddOrSetValue(ComboBox1.Text,edtValor.Text);
 end;
 
 procedure TPageFechamentoCaixa.SpeedButton2Click(Sender: TObject);

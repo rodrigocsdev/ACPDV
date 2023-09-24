@@ -82,12 +82,12 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
         <DCC_RemoteDebug>false</DCC_RemoteDebug>
-        <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
         <DCC_ExeOutput>.\bin</DCC_ExeOutput>
         <DCC_DcuOutput>.\lib</DCC_DcuOutput>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
+        <DCC_UnitSearchPath>C:\Users\Rodrigo.Carvalho\GitHub\InstalacaoACBr\Fontes\ACBrComum;C:\Users\Rodrigo.Carvalho\GitHub\InstalacaoACBr\Fontes\Terceiros\synalist;C:\Users\Rodrigo.Carvalho\GitHub\InstalacaoACBr\Fontes\Terceiros\JsonDataObjects;C:\Users\Rodrigo.Carvalho\GitHub\InstalacaoACBr\Fontes\Terceiros\json4delphi;C:\Users\Rodrigo.Carvalho\GitHub\InstalacaoACBr\Fontes\Terceiros\GZIPUtils;C:\Users\Rodrigo.Carvalho\GitHub\InstalacaoACBr\Fontes\Terceiros\FastStringReplace;C:\Users\Rodrigo.Carvalho\GitHub\acpdv\components\accupomnaofiscal;C:\Users\Rodrigo.Carvalho\GitHub\acpdv\components\cupomnaofiscal;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
@@ -254,9 +254,11 @@
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
-        <DCCReference Include="src\cotroller\acpdv.controller.pas"/>
+        <DCCReference Include="src\controller\acpdv.controller.pas"/>
         <DCCReference Include="src\model\core\acpdv.model.core.entitycaixa.pas"/>
         <DCCReference Include="src\model\core\acpdv.model.core.entityproduto.pas"/>
+        <DCCReference Include="src\model\core\acpdv.model.core.entityvendas.pas"/>
+        <DCCReference Include="src\model\dto\acpdv.model.dtos.pas"/>
         <RcItem Include="assert\alerta.png">
             <ResourceType>RCDATA</ResourceType>
             <ResourceId>alerta</ResourceId>
@@ -290,8 +292,8 @@
                     <Source Name="MainSource">ACPDV.dpr</Source>
                 </Source>
                 <Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k270.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp270.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k280.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp280.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
                 </Excluded_Packages>
             </Delphi.Personality>
             <Deployment Version="4">

@@ -142,11 +142,12 @@ function TDAOCaixaMovimento.Inserir(Value: TCaixaMovimento): TDAOCaixaMovimento;
 begin
   Result := Self;
   FDataSet := FConexao.SQL('INSERT INTO CAIXA_MOVIMENTO (ID_OPERADOR, ID_CAIXA, '+
-                           'ID_TURNO, SITUACAO) VALUES(?, ?, ?, ?)')
+                           'ID_TURNO, SITUACAO, SALDOINICIAL) VALUES(?, ?, ?, ?, ?)')
   .Params(0, Value.GetIdOperador)
   .Params(1, Value.GetIdCaixa)
   .Params(2, Value.GetIdTurno)
   .Params(3, Value.GetSituacao)
+  .Params(4, Value.GetSaldoInicial)
   .ExecSQL.SQL('select * from caixa_movimento where id=(select max(id) from caixa_movimento)')
   .Open.DataSet;
 

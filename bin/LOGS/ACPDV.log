@@ -1,32 +1,56 @@
-[Data/Hora........] 25/07/2023 11:01:51
-[Mensagem.........] No context-sensitive help installed
-[Classe Exceção...] EHelpSystemException
-[Formulário.......] pageprincipal
-[Unit.............] acpdv.view.principal
-[Component Visual.] edtUsuario
-----------------------------------------------------------------------
-
-[Data/Hora........] 25/07/2023 20:49:18
-[Mensagem.........] A component named FramePix already exists
-[Classe Exceção...] EComponentError
+[Data/Hora........] 24/09/2023 19:45:06
+[Mensagem.........] Item not found
+[Classe Exceção...] EListError
 [Formulário.......] pageprincipal
 [Unit.............] Vcl.StdCtrls
 [Component Visual.] edtProduto
 ----------------------------------------------------------------------
 
-[Data/Hora........] 30/08/2023 22:53:45
-[Mensagem.........] A component named FramePix already exists
-[Classe Exceção...] EComponentError
+[Data/Hora........] 24/09/2023 19:45:08
+[Mensagem.........] Item not found
+[Classe Exceção...] EListError
 [Formulário.......] pageprincipal
 [Unit.............] Vcl.StdCtrls
 [Component Visual.] edtProduto
 ----------------------------------------------------------------------
 
-[Data/Hora........] 30/08/2023 22:53:49
+[Data/Hora........] 24/09/2023 19:45:09
+[Mensagem.........] Item not found
+[Classe Exceção...] EListError
+[Formulário.......] pageprincipal
+[Unit.............] Vcl.StdCtrls
+[Component Visual.] edtProduto
+----------------------------------------------------------------------
+
+[Data/Hora........] 24/09/2023 19:45:13
 [Mensagem.........] A component named FrameCartao already exists
 [Classe Exceção...] EComponentError
 [Formulário.......] pageprincipal
 [Unit.............] Vcl.StdCtrls
 [Component Visual.] edtProduto
+----------------------------------------------------------------------
+
+[Data/Hora........] 24/09/2023 19:45:20
+[Mensagem.........] A component named FrameCartao already exists
+[Classe Exceção...] EComponentError
+[Formulário.......] pageprincipal
+[Unit.............] Vcl.StdCtrls
+[Component Visual.] edtProduto
+----------------------------------------------------------------------
+
+[Data/Hora........] 24/09/2023 19:45:22
+[Mensagem.........] A component named FrameCartao already exists
+[Classe Exceção...] EComponentError
+[Formulário.......] pageprincipal
+[Unit.............] Vcl.StdCtrls
+[Component Visual.] edtProduto
+----------------------------------------------------------------------
+
+[Data/Hora........] 24/09/2023 19:45:27
+[Mensagem.........] Item not found
+[Classe Exceção...] EListError
+[Formulário.......] PagePagamento
+[Unit.............] Vcl.ExtCtrls
+[Component Visual.] edtRecebido
 ----------------------------------------------------------------------
 

@@ -18,9 +18,10 @@ type
   public
     constructor Create;
     destructor Destroy; override;
-    class function New: iDAO<TCidade>;
+    class function New: TDAOCidade;
     function Listar : iDAO<TCidade>;
     function ListarPorId(Id : Variant) : iDAO<TCidade>;
+    function FindWhere(const Campo:String; const Value: Variant): TDAOCidade;
     function Excluir(aId : Variant) : iDAO<TCidade>; overload;
     function Excluir : iDAO<TCidade>; overload;
     function Atualizar : iDAO<TCidade>;
@@ -49,7 +50,7 @@ begin
     inherited;
 end;
 
-class function TDAOCidade.New: iDAO<TCidade>;
+class function TDAOCidade.New: TDAOCidade;
 begin
   Result := Self.Create;
 end;
@@ -102,6 +103,14 @@ begin
       .SQL('Delete from Cidade where cod_ibge=?')
       .Params(0,FCidade.GetCodIbge)
       .ExecSQL;
+end;
+
+function TDAOCidade.FindWhere(const Campo: String;
+  const Value: Variant): TDAOCidade;
+begin
+  Result := Self;
+  var lSQL: VAriant := 'select * from CIDADE where '+Campo+'=?';
+  FDataSet := FConexao.Query(lSQl, [Value]);
 end;
 
 function TDAOCidade.Atualizar : iDAO<TCidade>;

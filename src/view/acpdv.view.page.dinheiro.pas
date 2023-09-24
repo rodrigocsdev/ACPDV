@@ -26,6 +26,7 @@ type
   public
     class function New(AOwner: TComponent): TFrameDinheiro;
     function Alinhamento(Value: TAlign): TFrameDinheiro;
+    function Recebido(Value: Currency): TFrameDinheiro;
     function Embed(Value: TWinControl): TFrameDinheiro;
   end;
 
@@ -50,6 +51,12 @@ end;
 class function TFrameDinheiro.New(AOwner: TComponent): TFrameDinheiro;
 begin
   Result := Self.Create(Aowner);
+end;
+
+function TFrameDinheiro.Recebido(Value: Currency): TFrameDinheiro;
+begin
+  Result := Self;
+  edtRecebido.Text := FormatCurr(',0.00', Value);
 end;
 
 end.

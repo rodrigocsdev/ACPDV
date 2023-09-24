@@ -5,6 +5,7 @@ interface
 uses
   System.SysUtils,
   System.Classes,
+  System.Generics.Collections,
   Data.DB,
   Datasnap.DBClient,
   FireDAC.Stan.Intf,
@@ -36,6 +37,9 @@ type
     procedure DataModuleCreate(Sender: TObject);
   private
     FSQL: String;
+
+    procedure PreencheQuery(Value: String);
+    procedure PreencheParams(Value: Array of Variant);
   public
     class function New: TConexao;
     function SQL(Value: String): TConexao;
@@ -45,6 +49,11 @@ type
     function DataSet: TDataSet;
     function ExecSQL: TConexao;
     function Open: TConexao;
+
+    procedure Query(const Statement: String; const Params: Array of Variant); overload;
+    function Query(const Statement: Variant; const Params: Array of VAriant): TDataSet; overload;
+    function One(const Statement: Variant; const Prams: Array of VAriant): TDictionary<String, VAriant>;
+    procedure Close;
   end;
 
 implementation
@@ -52,6 +61,11 @@ implementation
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 {$R *.dfm}
 { TConexao }
+
+procedure TConexao.Close;
+begin
+  FDConnection.Connected := False;
+end;
 
 procedure TConexao.DataModuleCreate(Sender: TObject);
 var
@@ -104,6 +118,12 @@ begin
   Result := Self.Create(nil);
 end;
 
+function TConexao.One(const Statement: Variant;
+  const Prams: array of VAriant): TDictionary<String, VAriant>;
+begin
+
+end;
+
 function TConexao.Open: TConexao;
 begin
   Result := Self;
@@ -122,6 +142,43 @@ begin
   Result := Self;
   FDQuery.Params.Add;
   FDQuery.Params[aIndex].Value := Value;
+end;
+
+procedure TConexao.PreencheParams(Value: array of Variant);
+begin
+  for var I := Low(Value) to High(Value) do
+  begin
+    FDQuery.Params.Add;
+    FDQuery.Params[I].Value := Value[I];
+  end;
+end;
+
+procedure TConexao.PreencheQuery(Value: String);
+begin
+  if not FDConnection.Connected then
+    FDConnection.Connected := True;
+
+  FDQuery.Close;
+  FDQuery.SQL.Clear;
+  FDQuery.SQL.Add(Value);
+end;
+
+procedure TConexao.Query(const Statement: String;
+  const Params: array of Variant);
+begin
+  PreencheQuery(Statement);
+  PreencheParams(Params);
+  FDQuery.ExecSQL;
+end;
+
+function TConexao.Query(const Statement: Variant;
+  const Params: array of VAriant): TDataSet;
+begin
+  PreencheQuery(Statement);
+  PreencheParams(Params);
+
+  FDQuery.Open();
+  Result := FDQuery;
 end;
 
 function TConexao.SQL(Value: String): TConexao;

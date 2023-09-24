@@ -47,7 +47,7 @@ type
     pnlGrid: TPanel;
     pnlCancelarOp: TPanel;
     Shape1: TShape;
-    btnCancelarOp: TSpeedButton;
+    btnAbrirVenda: TSpeedButton;
     pnlConsultarPreco: TPanel;
     Shape2: TShape;
     btnConsultarPreco: TSpeedButton;
@@ -165,7 +165,10 @@ type
 
     procedure SplitViewAction(Value: TSplitView);
     procedure AjustarCampos;
+
     procedure VerificaCaixaFechadoAberto(Value: Boolean);
+    procedure VerificaVendaAberta(Value: Boolean);
+
     procedure InformacoesOperador;
   public
 
@@ -189,6 +192,12 @@ begin
   lblSubTotal.Caption := FormatCurr('"R$ ",0.00', 0);
   lblTotalCompra.Caption := FormatCurr('"R$ ",0.00', 0);
   pnlTitle.SetFocus;
+
+  for var I := Pred(ListBoxItems.ControlCount) downto 0 do
+  begin
+    ListBoxItems.Items.Delete(I);
+    ListBoxItems.Controls[I].DisposeOf;
+  end;
 end;
 
 procedure Tpageprincipal.btnCadastrarConfiguracaoBDClick(Sender: TObject);
@@ -229,6 +238,17 @@ begin
     edtProduto.SetFocus;
     TPageMensagens.New(Self).Mensagem('O caixa deve estar aberto!'+#13+'Deseja abrir o caixa?', INFORMACAO)
       .Embed(pnlMaster).ClickConfirmar(Confirmar);
+    Exit;
+  end;
+
+  if not FController.Venda.isVendaAberta then
+  begin
+    Key := #0;
+    edtProduto.Clear;
+    edtProduto.SetFocus;
+    TPageMensagens.New(Self).Mensagem('Venda inda não foi aberta, por favor '+#13+
+    'efetua a abertura da venda pressionando '+#13+' a tecla de atalho [F3] antes de continuar!', ALERTA)
+      .Embed(pnlMaster);
     Exit;
   end;
 
@@ -291,6 +311,13 @@ begin
             .Alinhamento(alTop)
             .Nome('FRAME'+FIndex.ToString)
             .Build;
+
+            lListaProduto.AddOrSetValue('ITEM', FIndex);
+            lListaProduto.AddOrSetValue('QUANTIDADE',StrToFloatDef(edtQuantidade.Text,1));
+
+            FController.Venda.RegistraItensVenda(lListaProduto);
+
+            pnlTitle.Caption := lListaProduto['DESCRICAO_PRODUTO'];
 
         finally
           lListaProduto.Free;
@@ -395,6 +422,7 @@ begin
            end)
           .Show;
       end;
+    VK_F3: VerificaVendaAberta(FController.Venda.AbrirVenda(FCaixa).isVendaAberta);
     VK_F6:
       ShowMessage('Cancelar Venda');
     VK_F5:
@@ -403,7 +431,17 @@ begin
       btnMaisFuncoesClick(Sender);
     VK_F7:
       begin
-        TPagePagamento.New(Self).Embed(pnlMaster);
+        TPagePagamento.New(Self)
+        .Informacoes(FCaixa)
+        .TotalVenda(FTotal)
+        .Embed(pnlMaster)
+        .Click(procedure (Sender: TObject)
+        begin
+          var lControleVenda := FController.Venda.isVendaAberta;
+          if not lControleVenda then
+            FTotal := 0;
+          VerificaVendaAberta(lControleVenda);
+        end);
       end;
     VK_F1:
       begin
@@ -461,7 +499,7 @@ end;
 
 procedure Tpageprincipal.MontarBotoes;
 begin
-  btnCancelarOp.Caption := 'Cancelar Operação ' + ''#13'' + ' (F10)';
+  btnAbrirVenda.Caption := 'Abrir Venda ' + ''#13'' + ' (F3)';
   btnConsultarPreco.Caption := 'Fechar Caixa' + ''#13'' + '(F4)';
   btnAbrirCaixa.Caption := 'Abrir Caixa' + ''#13'' + '(F2)';
   btnCancelarVenda.Caption := 'Cancelar Venda' + ''#13'' + '(F6)';
@@ -487,6 +525,18 @@ begin
   InformacoesOperador;
 
   AjustarCampos;
+end;
+
+procedure Tpageprincipal.VerificaVendaAberta(Value: Boolean);
+begin
+  if not Value then
+  begin
+    pnlTitulo.Caption := 'Caixa Aberto';
+    AjustarCampos;
+    exit;
+  end;
+
+  pnlTitle.Caption := 'Venda Liberada';
 end;
 
 end.

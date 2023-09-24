@@ -44,7 +44,7 @@ end;
 destructor TDAOEmpresa.Destroy;
 begin
   FEmpresa.Free;
-  FEmpresas.Free;
+//  FEmpresas.Free;
   FConexao.Free;
   inherited;
 end;

@@ -1,0 +1,21 @@
+             Jorge e Mário Adega Ltda             
+Rua Maria Antonieta Mello Freire Conceição, 182 - 
+                  Parque Santana                  
+         Mogi das Cruzes - SP - 08730-230         
+57.761.998/0001-64                 729.926.060.277
+21/06/2023 15:37:31                       COO:0001
+--------------------------------------------------
+#   Cód.    Descricao        Unit   Qtde    Valor 
+1   123     PRODUTO 1        5,00   1,000   5,00
+2   321     PRODUTO 2        2,00   3,000   6,00
+--------------------------------------------------
+Qtd. Total de Itens                              2
+Valor Total                               R$ 11,00
+--------------------------------------------------
+Forma de Pagamento                      Valor Pago
+Dinheiro                                  R$ 11,00
+--------------------------------------------------
+Operador: Alessandro           21/06/2023 15:37:31
+             ** NAO E CUPOM FISCAL **             
+--------------------------------------------------
+             Obrigado e Volte Sempre              
