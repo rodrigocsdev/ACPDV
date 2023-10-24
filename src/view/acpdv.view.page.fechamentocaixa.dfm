@@ -14,12 +14,10 @@ object PageFechamentoCaixa: TPageFechamentoCaixa
   Font.Name = 'Segoe UI'
   Font.Style = []
   KeyPreview = True
-  OldCreateOrder = False
   OnCreate = FormCreate
   OnKeyDown = FormKeyDown
   OnResize = FormResize
   OnShow = FormShow
-  PixelsPerInch = 96
   TextHeight = 13
   object pnlContainer: TPanel
     AlignWithMargins = True
@@ -184,10 +182,10 @@ object PageFechamentoCaixa: TPageFechamentoCaixa
             Padding.Bottom = 10
             TabOrder = 1
             object Label1: TLabel
-              Left = 10
+              Left = 160
               Top = 17
-              Width = 179
-              Height = 34
+              Width = 29
+              Height = 24
               Align = alClient
               Alignment = taRightJustify
               Caption = 'R$ '
@@ -197,9 +195,6 @@ object PageFechamentoCaixa: TPageFechamentoCaixa
               Font.Name = 'Tahoma'
               Font.Style = []
               ParentFont = False
-              ExplicitLeft = 115
-              ExplicitWidth = 29
-              ExplicitHeight = 24
             end
             object edtValor: TEdit
               Left = 189

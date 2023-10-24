@@ -16,7 +16,8 @@ uses
   Vcl.Buttons,
   Vcl.StdCtrls,
   Vcl.ExtCtrls, acpdv.model.caixa, acpdv.model.enum,
-  acpdv.view.componente.litatipopgfechamento, acpdv.controller;
+  acpdv.view.componente.listatipopgfechamento,
+  acpdv.controller;
 
 type
   TPageFechamentoCaixa = class(TForm)

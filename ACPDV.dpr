@@ -14,7 +14,7 @@ uses
   acpdv.view.page.importarcliente in 'src\view\acpdv.view.page.importarcliente.pas' {PageImportarCliente},
   acpdv.view.page.fechamentocaixa in 'src\view\acpdv.view.page.fechamentocaixa.pas' {PageFechamentoCaixa},
   acpdv.view.abrircaixa in 'src\view\acpdv.view.abrircaixa.pas' {PageAbrirCaixa},
-  acpdv.view.componente.litatipopgfechamento in 'src\view\componente\acpdv.view.componente.litatipopgfechamento.pas' {ComponentListaFechamentoCaixa: TFrame},
+  acpdv.view.componente.listatipopgfechamento in 'src\view\componente\acpdv.view.componente.listatipopgfechamento.pas' {ComponentListaFechamentoCaixa: TFrame},
   acpdv.model.enum in 'src\model\acpdv.model.enum.pas',
   acpdv.utils in 'src\utils\acpdv.utils.pas',
   acpdv.utils.keyevent in 'src\utils\acpdv.utils.keyevent.pas',
